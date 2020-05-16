@@ -7,12 +7,6 @@
  */
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
@@ -41,27 +35,8 @@ public class HomeServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        PrintWriter out = response.getWriter();
-        Connection con = null;
-        Statement stm = null;
-        ResultSet rs = null;
-        try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/project3", "root", "");
-            stm = con.createStatement();
-            rs = stm.executeQuery("SELECT * FROM products LIMIT 0,5");
-            ArrayList<Product> pds = new ArrayList<Product>();
-            while(rs.next()) {
-                pds.add(new Product(rs.getInt("id"), rs.getString("name"), rs.getString("summary"), rs.getString("thumbnail"), rs.getString("category"), rs.getString("detail"), rs.getFloat("price")));
-            }
-            request.setAttribute("data", pds);
-        } catch (SQLException ex) {
-            System.out.print(ex);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(HomeServlet.class.getName()).log(Level.SEVERE, null, ex);
-        }
-       RequestDispatcher rd = request.getRequestDispatcher("/home.jsp");
-       rd.include(request, response);
+        RequestDispatcher rd = request.getRequestDispatcher("/home.jsp");
+        rd.include(request, response);
     }
 
     /**

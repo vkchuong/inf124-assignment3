@@ -2,9 +2,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <jsp:include page="components/head.html" />
 <jsp:include page="components/header.html" />
-    <script type="text/javascript">
-        window.location.href = "./home";
-    </script>
     <div class="main">
         <div class="hotdeal">
             <div class="detail">
