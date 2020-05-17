@@ -4,6 +4,10 @@
         <servlet-name>HomeServlet</servlet-name>
         <servlet-class>HomeServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>productDetails</servlet-name>
+        <servlet-class>com.s2020iae.project3.productDetails</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>HomeServlet</servlet-name>
         <url-pattern>/home</url-pattern>
@@ -23,6 +27,10 @@
     <servlet-mapping>
         <servlet-name>AllProducts</servlet-name>
         <url-pattern>/products</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>productDetails</servlet-name>
+        <url-pattern>/productDetails</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

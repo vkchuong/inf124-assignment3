@@ -6,7 +6,7 @@
 <% Product p = (Product)request.getAttribute("data"); %>
     <div class="main">
         <div class="content">
-            <h1>Basketball</h1>
+            <h1><p><%=p.getName()%></p></h1>
             <table width="100%" cellspacing="20">
                 <tbody>
                     <tr>
@@ -21,7 +21,12 @@
                             <h4>Price:</h4>
                             <p id="unitPrice"><%=p.getPrice()%></p>
                             <hr />
-                            <a href="detail?id=${param.id}" class="addtocart">Add To Cart</a>
+                            <script type=""text/javascript">
+                                function showAlert(){
+                                    alert("Product added to cart!");
+                                }
+                                </script>
+                            <a href="products" class="addtocart" type="submit" onclick="showAlert()">Add To Cart</a>
                         </td>
                     </tr>
                 </tbody>
