@@ -26,7 +26,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author anon
  */
-
+@WebServlet(urlPatterns = {"/cart"})
 public class productDetails extends HttpServlet {
 
 
@@ -43,6 +43,7 @@ public class productDetails extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        System.out.print("sup");
         String id = request.getParameter("id");
         response.setContentType("text/html;charset=UTF-8");
         Connection con = null;
@@ -71,7 +72,7 @@ public class productDetails extends HttpServlet {
                     session.setAttribute("cart", cartlist);// save session
                                         
                 request.setAttribute("data", pd);
-                Items item = new Items(pd,1,pd.getPrice());
+                //Items item = new Items(pd,1,pd.getPrice());
                 RequestDispatcher dispatch = request.getRequestDispatcher("/chart.jsp");
                 dispatch.include(request, response);
             }
@@ -81,7 +82,6 @@ public class productDetails extends HttpServlet {
             System.out.print(ex);
         }
        
-        String userAction=request.getParameter("userAction");
         
     }
 

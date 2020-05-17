@@ -38,6 +38,8 @@
 			<td colspan="6" align="right">Total</td>
 			<td>${total }</td>
 		</tr>
+                
 	</table>
            </div>
     </div>
+<jsp:include page="components/footer.html" />                

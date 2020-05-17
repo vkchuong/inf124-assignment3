@@ -19,14 +19,8 @@
                             <h4>Category:</h4>
                             <p><%=p.getCategory()%></p>
                             <h4>Price:</h4>
-                            <p id="unitPrice"><%=p.getPrice()%></p>
-                            <hr />
-                            <script type=""text/javascript">
-                                function showAlert(){
-                                    alert("Product added to cart!");
-                                }
-                                </script>
-                            <a href="products" class="addtocart" type="submit" onclick="showAlert()">Add To Cart</a>
+                            <p id="unitPrice"><%=p.getPrice()%></p>           
+                            <a href="cart?id=${param.id}" class="addtocart">Add To Cart</a>
                         </td>
                     </tr>
                 </tbody>

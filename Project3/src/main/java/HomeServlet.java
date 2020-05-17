@@ -38,6 +38,7 @@ public class HomeServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         Connection con = null;
+        System.out.print("yoo");
         Statement stm = null;
         ResultSet rs = null;
         try {
@@ -52,12 +53,11 @@ public class HomeServlet extends HttpServlet {
             request.setAttribute("data", newProduct);
 
             HttpSession session = request.getSession();
-            if(null != session.getAttribute("tracking")) { // Create new if not exist
-                ArrayList<Product> trackList = (ArrayList<Product>)(session.getAttribute("tracking"));
+            if(null != session.getAttribute("cart")) { // Create new if not exist
+                ArrayList<Product> trackList = (ArrayList<Product>)(session.getAttribute("cart"));
                 request.setAttribute("trackData", trackList);
                 request.setAttribute("historyTitle", "BROWSER HISTORY");
             } else {
-
                 rs = stm.executeQuery("SELECT * FROM products LIMIT 5,5");
                 ArrayList<Product> topSell = new ArrayList<Product>();
                 while(rs.next()) {
