@@ -13,13 +13,11 @@ public class Items {
     
     private Product product;
     private int quantity;
-    private float price;
     
 
-    public Items (Product product,int quantity,float price){
+    public Items (Product product,int quantity){
         this.product=product;
         this.quantity=quantity;
-        this.price=price;
     }
     
     public Product getProduct()
@@ -30,18 +28,9 @@ public class Items {
     public int getQuantity(){
         return quantity;
     }
-    
-    public float getPrice()
-    {
-        return price;
-    }
-    
+
     public void setQuantity(int quantity){
         this.quantity=quantity;
-    }
-    
-    public void setPrice(int price){
-        this.price=price;
     }
     
     public void setProduct(Product product){
