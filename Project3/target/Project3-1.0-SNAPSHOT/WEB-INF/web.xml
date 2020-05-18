@@ -25,11 +25,11 @@
         <url-pattern>/products</url-pattern>
     </servlet-mapping>
     <servlet>
-        <servlet-name>productDetails</servlet-name>
-        <servlet-class>productDetails</servlet-class>
+        <servlet-name>CartServlet</servlet-name>
+        <servlet-class>CartServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>productDetails</servlet-name>
+        <servlet-name>CartServlet</servlet-name>
         <url-pattern>/cart</url-pattern>
     </servlet-mapping>
     <servlet>

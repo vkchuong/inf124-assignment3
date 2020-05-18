@@ -53,8 +53,8 @@ public class HomeServlet extends HttpServlet {
             request.setAttribute("data", newProduct);
 
             HttpSession session = request.getSession();
-            if(null != session.getAttribute("cart")) { // Create new if not exist
-                ArrayList<Product> trackList = (ArrayList<Product>)(session.getAttribute("cart"));
+            if(null != session.getAttribute("tracking")) { // Create new if not exist
+                ArrayList<Product> trackList = (ArrayList<Product>)(session.getAttribute("tracking"));
                 request.setAttribute("trackData", trackList);
                 request.setAttribute("historyTitle", "BROWSER HISTORY");
             } else {
