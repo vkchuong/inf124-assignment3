@@ -39,10 +39,10 @@ public class CheckoutServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         System.out.print("hoe");
-        
+
         RequestDispatcher rd = request.getRequestDispatcher("/checkout.jsp");
         rd.include(request, response);
-        
+
     }
 
     /**

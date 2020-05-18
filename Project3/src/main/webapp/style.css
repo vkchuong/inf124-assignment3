@@ -204,6 +204,15 @@ a {
     width:500px;
 }
 /******************************
+*		       Cart           *
+******************************/
+.cart tr, .cart th{
+    border: none;
+}
+.cart table, .cart tr, .cart th, .cart td {
+    border: 1px solid #ccc;
+}
+/******************************
 *		  Check Out           *
 ******************************/
 .container form {

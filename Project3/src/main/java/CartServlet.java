@@ -38,51 +38,61 @@ public class CartServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String id = request.getParameter("id");
-        System.out.print("poop");
         response.setContentType("text/html;charset=UTF-8");
         Connection con = null;
         Statement stm = null;
         ResultSet rs = null;
-        int temp=0;
-        try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/project3", "root", "");
-            stm = con.createStatement();
-            rs = stm.executeQuery("SELECT * FROM products WHERE `id` = '" + id + "'");
-            while(rs.next()) {
-                Product pd = new Product(rs.getInt("id"), rs.getString("name"), rs.getString("summary"), rs.getString("thumbnail"), rs.getString("category"), rs.getString("detail"), rs.getFloat("price"));
-                
-                    ArrayList<Product> trackList;
-                    HttpSession session = request.getSession(false);
-                    if(null == session.getAttribute("cartItems")){ // new sesstion initial
-                        session = request.getSession(true);
-                        trackList = new ArrayList<Product>();
-                    } else { // restore from previous sesstion 
-                        trackList = (ArrayList<Product>)session.getAttribute("cartItems");
-                                               
-                        for (Product p: trackList) { 
-                            System.out.println(p.getName()); 
+        if(id != null) {
+            try {
+                Class.forName("com.mysql.cj.jdbc.Driver");
+                con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/project3", "root", "");
+                stm = con.createStatement();
+                rs = stm.executeQuery("SELECT * FROM products WHERE `id` = '" + id + "'");
+                while(rs.next()) {
+                    Product pd = new Product(rs.getInt("id"), rs.getString("name"), rs.getString("summary"), rs.getString("thumbnail"), rs.getString("category"), rs.getString("detail"), rs.getFloat("price"));
+
+                    // Begin Store to session
+                        ArrayList<Product> cartList;
+                        HttpSession session = request.getSession(false);
+                        if(null == session.getAttribute("cartItems")){ // new sesstion initial
+                            session = request.getSession();
+                            cartList = new ArrayList<Product>();
+                        } else { // restore from previous sesstion
+                            cartList = (ArrayList<Product>)session.getAttribute("cartItems");
                         }
-                    }
-                    trackList.add(pd);
-                    session.setAttribute("cartItems", trackList);// save session
-                                        
-                request.setAttribute("cartData", pd);
-                Items item = new Items(pd,1);
-                RequestDispatcher rd = request.getRequestDispatcher("/cart.jsp");
-                rd.include(request, response);
-                temp=1;
+                        cartList.add(pd);
+                        session.setAttribute("cartItems", cartList);// save session
+                    // End Store to session
+
+//                    request.setAttribute("data", pd);
+//                    RequestDispatcher rd = request.getRequestDispatcher("/detail.jsp");
+//                    rd.include(request, response);
+                    String site = new String("./cart");
+                    response.setStatus(response.SC_MOVED_TEMPORARILY);
+                    response.setHeader("Location", site); 
+                }
+            } catch (SQLException ex) {
+                System.out.print(ex);
+            } catch (ClassNotFoundException ex) {
+                System.out.print(ex);
             }
-        } catch (SQLException ex) {
-            System.out.print(ex);
-        } catch (ClassNotFoundException ex) {
-            System.out.print(ex);
-        }
-        if(temp==0)
-        {
+        } else {
+            HttpSession session = request.getSession();
+            
+            if(null != session.getAttribute("cartItems")) {
+                ArrayList<Product> cartList = (ArrayList<Product>)(session.getAttribute("cartItems"));
+                request.setAttribute("cartData", cartList);
+                for (Product p: cartList) {
+                    System.out.println(p.getName());
+                }
+                request.setAttribute("isEmpty", "no");
+            } else {
+                request.setAttribute("isEmpty", "yes");                
+            }
             RequestDispatcher rd = request.getRequestDispatcher("/cart.jsp");
             rd.include(request, response);
         }
+
     }
 
     /**
