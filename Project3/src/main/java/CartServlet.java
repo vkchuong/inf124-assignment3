@@ -43,6 +43,7 @@ public class CartServlet extends HttpServlet {
         Connection con = null;
         Statement stm = null;
         ResultSet rs = null;
+        int temp=0;
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/project3", "root", "");
@@ -70,15 +71,18 @@ public class CartServlet extends HttpServlet {
                 Items item = new Items(pd,1);
                 RequestDispatcher rd = request.getRequestDispatcher("/cart.jsp");
                 rd.include(request, response);
+                temp=1;
             }
         } catch (SQLException ex) {
             System.out.print(ex);
         } catch (ClassNotFoundException ex) {
             System.out.print(ex);
         }
-
-        //RequestDispatcher rd = request.getRequestDispatcher("/cart.jsp");
-        //rd.include(request, response);
+        if(temp==0)
+        {
+            RequestDispatcher rd = request.getRequestDispatcher("/cart.jsp");
+            rd.include(request, response);
+        }
     }
 
     /**

@@ -72,7 +72,7 @@ public class DetailServlet extends HttpServlet {
                                         
                 request.setAttribute("data", pd);    
                 RequestDispatcher rd = request.getRequestDispatcher("/detail.jsp");
-                    rd.include(request, response);
+                rd.include(request, response);
             }
         } catch (SQLException ex) {
             System.out.print(ex);

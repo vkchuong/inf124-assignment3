@@ -33,11 +33,11 @@
         <url-pattern>/cart</url-pattern>
     </servlet-mapping>
     <servlet>
-        <servlet-name>Checkout</servlet-name>
-        <servlet-class>Checkout</servlet-class>
+        <servlet-name>CheckoutServlet</servlet-name>
+        <servlet-class>CheckoutServlet</servlet-class>
     </servlet>
     <servlet-mapping>
-        <servlet-name>Checkout</servlet-name>
+        <servlet-name>CheckoutServlet</servlet-name>
         <url-pattern>/checkout</url-pattern>
     </servlet-mapping>
     <session-config>
