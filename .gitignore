@@ -355,3 +355,5 @@ MigrationBackup/
 .env.development.local
 .env.test.local
 .env.production.local
+Project3/target/classes/.netbeans_automatic_build
+Project3/target/test-classes/.netbeans_automatic_build

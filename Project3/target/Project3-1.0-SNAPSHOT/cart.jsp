@@ -19,19 +19,19 @@
                     <th>price</th>
                     <th>summary</th>
                 </tr>
-                <tr>
                     <%ArrayList<Product> tracks =
                         (ArrayList<Product>)request.getAttribute("cartData");
                         for(Product p:tracks){
                     %>
+                    <tr>
                         <td><%=p.getId()%></td>
                         <td><%=p.getName()%></td>
                         <td><img src="./assets/<%=p.getThumbnail()%>" height="75"></td>
                         <td><%=p.getCategory()%></td>
                         <td><%=p.getPrice()%></td>
                         <td><%=p.getSummary()%></td>
+                    </tr>
                     <%}%>
-                </tr>
     	    </table>
             <% } %>
         </div>
