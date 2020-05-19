@@ -78,17 +78,23 @@ public class CartServlet extends HttpServlet {
             }
         } else {
             HttpSession session = request.getSession();
-            
+            double subTotal = 0.00;
+            int numOfItems = 0;
             if(null != session.getAttribute("cartItems")) {
                 ArrayList<Product> cartList = (ArrayList<Product>)(session.getAttribute("cartItems"));
                 request.setAttribute("cartData", cartList);
                 for (Product p: cartList) {
                     System.out.println(p.getName());
+                    subTotal += p.getPrice();
                 }
                 request.setAttribute("isEmpty", "no");
+                numOfItems = cartList.size();
             } else {
                 request.setAttribute("isEmpty", "yes");                
             }
+            subTotal = Math.round(subTotal*100.0)/100.0;
+            request.setAttribute("subTotal", String.format("%.2f", subTotal));
+            request.setAttribute("numOfItems",numOfItems);
             RequestDispatcher rd = request.getRequestDispatcher("/cart.jsp");
             rd.include(request, response);
         }

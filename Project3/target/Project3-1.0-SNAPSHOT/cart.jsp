@@ -35,17 +35,13 @@
     	    </table>
             <% } %>
             <br>
-            <p style="text-align: right; font-weight: 1.2rem;">Subtotal (n items): </p>
-            <p style="text-align: right; font-weight: 1.2rem;" id="totalPrice"></p>
+            <% Object total = request.getAttribute("subTotal");%> 
+            <% Object numOfItems = request.getAttribute("numOfItems");%> 
+            <p style="text-align: right; font-weight: 1.2rem;">Subtotal (<%=numOfItems%> items): </p>
+            <p style="text-align: right; font-weight: 1.2rem;" id="totalPrice">
+                <%=total%>     
+            </p>
             <br>
-            <script>
-                var table = document.getElementById("cartTable");
-                var totalSum = 0.0;
-                for (var i = 1; i < table.rows.length; i++){
-                    totalSum += parseFloat(table.rows[i].cells[4].innerHTML);
-                }
-                document.getElementById("totalPrice").innerHTML = totalSum;
-            </script>
         </div>
     </div>
 <jsp:include page="components/footer.html" />
