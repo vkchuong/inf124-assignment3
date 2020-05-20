@@ -58,10 +58,16 @@ public class CheckoutServlet extends HttpServlet {
         request.setAttribute("numOfItems",numOfItems);
         RequestDispatcher rd = request.getRequestDispatcher("/checkout.jsp");
         rd.include(request, response);
-
+        
     }
     
-//    doPost(){
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+        
+        // LOGIC
+        RequestDispatcher rd = getServletContext().getRequestDispatcher("/confirmation.jsp");
+        rd.forward(request, response);
 //        form Data   request.getParams()
 //                
 //        name, final price, = extract form Data
@@ -72,7 +78,7 @@ public class CheckoutServlet extends HttpServlet {
 //        
 //        forward(confirm.jsp, order conf #)
 //                
-//    }
+    }
     
     /**
      * Returns a short description of the servlet.

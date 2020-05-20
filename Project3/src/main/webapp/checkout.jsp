@@ -11,7 +11,7 @@
         <div class="main">
                 <h1>Order Form</h1>
                 <div class="orderform">
-                    <form name="submitform" id="submitform" method="post" action="/confirmation">
+                    <form name="submitform" id="submitform" method="post" action="./checkout">
                         <p class="form-message"><?=(isset($errorMessage))?$errorMessage:"";?></p>
                         <div class="row">
                             <div class="col-50">
