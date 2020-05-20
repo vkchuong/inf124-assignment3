@@ -17,6 +17,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import com.s2020iae.project3.Product;
 import com.s2020iae.project3.Items;
+import java.util.Enumeration;
 import javax.servlet.http.HttpSession;
 
 /**
@@ -65,6 +66,13 @@ public class CheckoutServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
+        System.out.println("PARAM VALUES:");
+        Enumeration<String> paramNames = request.getParameterNames();
+        while (paramNames.hasMoreElements()){
+            String currParamName = paramNames.nextElement();
+            String currParamValue = request.getParameter(currParamName);
+            System.out.println(currParamName +" : "+ currParamValue);
+        }
         // LOGIC
         RequestDispatcher rd = getServletContext().getRequestDispatcher("/confirmation.jsp");
         rd.forward(request, response);
