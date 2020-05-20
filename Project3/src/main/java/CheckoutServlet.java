@@ -38,13 +38,42 @@ public class CheckoutServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        System.out.print("hoe");
-
+        HttpSession session = request.getSession();
+        double subTotal = 0.00;
+        int numOfItems = 0;
+        if(null != session.getAttribute("cartItems")) {
+            ArrayList<Product> cartList = (ArrayList<Product>)(session.getAttribute("cartItems"));
+            request.setAttribute("cartData", cartList);
+            for (Product p: cartList) {
+                System.out.println(p.getName());
+                subTotal += p.getPrice();
+            }
+            request.setAttribute("isEmpty", "no");
+            numOfItems = cartList.size();
+        } else {
+            request.setAttribute("isEmpty", "yes");                
+        }
+        subTotal = Math.round(subTotal*100.0)/100.0;
+        request.setAttribute("subTotal", String.format("%.2f", subTotal));
+        request.setAttribute("numOfItems",numOfItems);
         RequestDispatcher rd = request.getRequestDispatcher("/checkout.jsp");
         rd.include(request, response);
 
     }
-
+    
+//    doPost(){
+//        form Data   request.getParams()
+//                
+//        name, final price, = extract form Data
+//        
+//        SQL(insert, -- orders , , )
+//        
+//        order conf # = getLastId(orders) 
+//        
+//        forward(confirm.jsp, order conf #)
+//                
+//    }
+    
     /**
      * Returns a short description of the servlet.
      *

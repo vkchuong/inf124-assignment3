@@ -11,7 +11,7 @@
         <div class="main">
                 <h1>Order Form</h1>
                 <div class="orderform">
-                    <form name="submitform" id="submitform" method="post" action="detail.php">
+                    <form name="submitform" id="submitform" method="post" action="/confirmation">
                         <p class="form-message"><?=(isset($errorMessage))?$errorMessage:"";?></p>
                         <div class="row">
                             <div class="col-50">
@@ -117,7 +117,8 @@
                                 <div id="price-table">
 
                                     <div>Total Price:</div>
-                                    <div class="price-item">&nbsp; &nbsp;$<span id="total-price"></span></div>
+                                    <% Object total = request.getAttribute("subTotal");%> 
+                                    <div class="price-item">&nbsp; &nbsp;$ <%=total%><span id="total-price"></span></div>
 
                                     <div>Total Tax: </div>
                                     <div class="price-item">+ $<span id="tax-amount"></span></div>
