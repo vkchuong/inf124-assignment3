@@ -88,6 +88,13 @@ public class CheckoutServlet extends HttpServlet {
             Class.forName("com.mysql.cj.jdbc.Driver");
             con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/project3", "root", "");
             stm = con.createStatement();
+            if (paramMap.get("billzip").isEmpty()){
+                paramMap.put("billzip", paramMap.get("zip"));
+                paramMap.put("billstate", paramMap.get("state"));
+                paramMap.put("billaddr", paramMap.get("address"));
+                paramMap.put("billcity", paramMap.get("city"));
+            }
+                
             String query = "INSERT INTO orders (`firstname`, `lastname`, `email`, `phone`, `address`, `city`, `state`, `zip`, `billaddr`, `billcity`, `billstate`, `billzip`, `method`, `productid`, `quantity`, `cardname`, `cardnumber`, `expmonth`, `expyear`, `cvv`, `price`) VALUES ('"+paramMap.get("firstname")+"','"+paramMap.get("lastname")+"','"+paramMap.get("email")+"','"+paramMap.get("phone")+"','"+paramMap.get("address")+"','"+paramMap.get("city")+"','"+paramMap.get("state")+"','"+paramMap.get("zip")+"','"+paramMap.get("billaddr")+"','"+paramMap.get("billcity")+"','"+paramMap.get("billstate")+"','"+paramMap.get("billzip")+"','"+paramMap.get("method")+"','"+paramMap.getOrDefault("productId","1")+"','"+paramMap.getOrDefault("quantity","1")+"','"+paramMap.get("cardname")+"','"+paramMap.get("cardnumber")+"','"+paramMap.get("expmonth")+"','"+paramMap.get("expyear")+"','"+paramMap.get("cvv")+"','"+paramMap.get("totalPrice")+"')";
             System.out.println(query);
             numOfRowsAffected = stm.executeUpdate(query);
