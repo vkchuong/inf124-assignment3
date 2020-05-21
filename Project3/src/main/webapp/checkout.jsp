@@ -1,10 +1,37 @@
 <%@page import="com.s2020iae.project3.Product"%>
+<%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <jsp:include page="components/head.html" />
 <jsp:include page="components/header.html" />
     <div class="container">
         <div class="main">
+                <div class="row content cart" style="padding-left:50px">
+                    <% if(request.getAttribute("isEmpty") == "no") { %>
+                        <% Object numOfItems = request.getAttribute("numOfItems");%> 
+                        <h1 style="margin-left:0">Re-confirm <%=numOfItems%> item(s)</h1>
+                        <table id="cartTable" border="1" width="95%">
+                            <tr>
+                                <th>name</th>
+                                <th>thumbnail</th>
+                                <th>price</th>
+                                <th>summary</th>
+                            </tr>
+                            <%ArrayList<Product> tracks =
+                                (ArrayList<Product>)request.getAttribute("cartData");
+                                for(Product p:tracks){
+                            %>
+                            <tr>
+                                <td><%=p.getName()%></td>
+                                <td><img src="./assets/<%=p.getThumbnail()%>" height="30"></td>
+                                <td><%=p.getPrice()%></td>
+                                <td><%=p.getSummary()%></td>
+                            </tr>
+                            <%}%>
+                        </table>
+                    <% } %>
+                    <br>
+                </div>
                 <div class="orderform">
                     <form name="submitform" id="submitform" method="post" action="./checkout">
                         <h1 style="margin-left:0">Order Form</h1>
