@@ -97,7 +97,13 @@ public class CheckoutServlet extends HttpServlet {
                 
             String query = "INSERT INTO orders (`firstname`, `lastname`, `email`, `phone`, `address`, `city`, `state`, `zip`, `billaddr`, `billcity`, `billstate`, `billzip`, `method`, `productid`, `quantity`, `cardname`, `cardnumber`, `expmonth`, `expyear`, `cvv`, `price`) VALUES ('"+paramMap.get("firstname")+"','"+paramMap.get("lastname")+"','"+paramMap.get("email")+"','"+paramMap.get("phone")+"','"+paramMap.get("address")+"','"+paramMap.get("city")+"','"+paramMap.get("state")+"','"+paramMap.get("zip")+"','"+paramMap.get("billaddr")+"','"+paramMap.get("billcity")+"','"+paramMap.get("billstate")+"','"+paramMap.get("billzip")+"','"+paramMap.get("method")+"','"+paramMap.getOrDefault("productId","1")+"','"+paramMap.getOrDefault("quantity","1")+"','"+paramMap.get("cardname")+"','"+paramMap.get("cardnumber")+"','"+paramMap.get("expmonth")+"','"+paramMap.get("expyear")+"','"+paramMap.get("cvv")+"','"+paramMap.get("totalPrice")+"')";
             System.out.println(query);
-            numOfRowsAffected = stm.executeUpdate(query);
+            numOfRowsAffected = stm.executeUpdate(query, Statement.RETURN_GENERATED_KEYS);
+            ResultSet rs = stm.getGeneratedKeys();
+            int orderId = -1; // in case INSERT fails, print orderId=-1
+            if (rs.next()){
+                orderId = rs.getInt(1);
+            }
+            System.out.println("Order ID #: " + orderId);
             System.out.println("Num Of Rows Affected: "+numOfRowsAffected);
             
             HttpSession session = request.getSession();
