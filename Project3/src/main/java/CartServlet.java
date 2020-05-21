@@ -17,12 +17,14 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import com.s2020iae.project3.Product;
 import com.s2020iae.project3.Items;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author chuon
  */
+@WebServlet(urlPatterns = {"/cart"})
 public class CartServlet extends HttpServlet {
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

@@ -6,7 +6,7 @@
 <% Product p = (Product)request.getAttribute("data"); %>
     <div class="main">
         <div class="content">
-            <h1><p><%=p.getName()%></p></h1>
+            <h1><%=p.getName()%></h1>
             <table width="100%" cellspacing="20">
                 <tbody>
                     <tr>
@@ -15,7 +15,7 @@
                         </td>
                         <td style="display: inline-block;">
                             <h4>Name:</h4>
-                            <p><%=p.getName()%></p>
+                            <p><%=p.getName()%></p> 
                             <h4>Category:</h4>
                             <p><%=p.getCategory()%></p>
                             <h4>Price:</h4>

@@ -18,12 +18,13 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import com.s2020iae.project3.Product;
-import javax.servlet.http.HttpSession;
+import javax.servlet.annotation.WebServlet;
 
 /**
  *
  * @author chuon
  */
+@WebServlet(urlPatterns = {"/products"})
 public class AllProducts extends HttpServlet {
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

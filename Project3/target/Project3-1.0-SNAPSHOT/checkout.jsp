@@ -4,43 +4,43 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <jsp:include page="components/head.html" />
 <jsp:include page="components/header.html" />
-    <div class="container">
         <div class="main">
-                <div class="row content cart" style="padding-left:50px">
-                    <% if(request.getAttribute("isEmpty") == "no") { %>
-                        <% Object numOfItems = request.getAttribute("numOfItems");%> 
-                        <h1 style="margin-left:0">Re-confirm <%=numOfItems%> item(s)</h1>
-                        <table id="cartTable" border="1" width="95%">
-                            <tr>
-                                <th>name</th>
-                                <th>thumbnail</th>
-                                <th>price</th>
-                                <th>summary</th>
-                            </tr>
-                            <%ArrayList<Product> tracks =
-                                (ArrayList<Product>)request.getAttribute("cartData");
-                                for(Product p:tracks){
-                            %>
-                            <tr>
-                                <td><%=p.getName()%></td>
-                                <td><img src="./assets/<%=p.getThumbnail()%>" height="30"></td>
-                                <td><%=p.getPrice()%></td>
-                                <td><%=p.getSummary()%></td>
-                            </tr>
-                            <%}%>
-                        </table>
-                    <% } %>
-                    <br>
-                </div>
+            <div class="content cart">
+                <% if(request.getAttribute("isEmpty") == "no") { %>
+                    <% Object numOfItems = request.getAttribute("numOfItems");%> 
+                    <h1>Re-confirm <%=numOfItems%> item(s)</h1>
+                    <table id="cartTable" border="1" width="100%" class="all-align">
+                        <tr>
+                            <th>name</th>
+                            <th>thumbnail</th>
+                            <th>price</th>
+                            <th>summary</th>
+                        </tr>
+                        <%ArrayList<Product> tracks =
+                            (ArrayList<Product>)request.getAttribute("cartData");
+                            for(Product p:tracks){
+                        %>
+                        <tr>
+                            <td><%=p.getName()%></td>
+                            <td><img src="./assets/<%=p.getThumbnail()%>" height="30"></td>
+                            <td><%=p.getPrice()%></td>
+                            <td><%=p.getSummary()%></td>
+                        </tr>
+                        <%}%>
+                    </table>
+                <% } %>
+                <br>
+            </div>
+            <div class="content">
                 <div class="orderform">
                     <form name="submitform" id="submitform" method="post" action="./checkout">
-                        <h1 style="margin-left:0">Order Form</h1>
+                        <h1>Order Form</h1>
                         <% if(request.getAttribute("isEmpty") == "yes") { %>
-                            <h3>Your cart is empty</h3>
+                            <h3 class="all-align">Your cart is empty</h3>
+                            <br /><br />
                         <% } else { %>
-                        <p class="form-message"></p>
                         <div class="row">
-                            <div class="col-50">
+                            <div class="col-75">
                                 <h3>Buyer's Information</h3>
                                 <br />
                                 <label for="fname"> First Name</label>
@@ -62,7 +62,7 @@
                                 <div class="row">
                                     <div class="col-50">
                                         <label for="state">State</label>
-                                        <input type="text" id="state" name="state" placeholder="New York" required />
+                                        <input type="text" id="state" name="state" placeholder="New York" required autocomplete="no"/>
                                         <div id="stateList"></div>
                                     </div>
                                     <div class="col-50">
@@ -170,5 +170,4 @@
             </div>
         </div>
     </div>
-<script type="text/javascript" src="js/main.js"></script>
 <jsp:include page="components/footer.html" />
