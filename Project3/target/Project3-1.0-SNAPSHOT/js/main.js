@@ -3,7 +3,7 @@ function sendEmail() {
 }
 
 var quantity = 1;
-var price = document.getElementById('unitPrice').innerHTML.substring(1);
+var price = document.getElementById('total-price').innerHTML.substring(1);
 var total = quantity * price;
 
 function updatePrice() {

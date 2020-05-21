@@ -92,6 +92,10 @@ public class CheckoutServlet extends HttpServlet {
             System.out.println(query);
             numOfRowsAffected = stm.executeUpdate(query);
             System.out.println("Num Of Rows Affected: "+numOfRowsAffected);
+            
+            HttpSession session = request.getSession();
+            session.invalidate();
+            
         } catch (SQLException ex) {
             System.out.print(ex);
         } catch (ClassNotFoundException ex) {

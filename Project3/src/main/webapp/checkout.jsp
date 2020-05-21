@@ -3,16 +3,15 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <jsp:include page="components/head.html" />
 <jsp:include page="components/header.html" />
-    <div class="main">
-        <div class="content">         
-
-<body>
     <div class="container">
         <div class="main">
-                <h1>Order Form</h1>
                 <div class="orderform">
                     <form name="submitform" id="submitform" method="post" action="./checkout">
-                        <p class="form-message"><?=(isset($errorMessage))?$errorMessage:"";?></p>
+                        <h1>Order Form</h1>
+                        <% if(request.getAttribute("isEmpty") == "yes") { %>
+                            <h3>Your cart is empty</h3>
+                        <% } else { %>
+                        <p class="form-message"></p>
                         <div class="row">
                             <div class="col-50">
                                 <h3>Buyer's Information</h3>
@@ -53,11 +52,11 @@
                                     <option>Overnight ($11.00)</option>
                                     <option selected>2-day expedited ($9.50)</option>
                                     <option>7-day ground ($6.25)</option>
-                                </select>                               
+                                </select>
                                 <br />
                             </div>
 
-                            <div class="col-50">                                                           
+                            <div class="col-50">
                                 <h3>Payment Information</h3>
                                 <br />
                                 <label for="cname">Name on Card</label>
@@ -117,8 +116,8 @@
                                 <div id="price-table">
 
                                     <div>Total Price:</div>
-                                    <% Object total = request.getAttribute("subTotal");%> 
-                                    <div class="price-item">&nbsp; &nbsp;$ <%=total%><span id="total-price"></span></div>
+                                    <% Object total = request.getAttribute("subTotal");%>
+                                    <div class="price-item"><span id="total-price">$<%=total%></span></div>
 
                                     <div>Total Tax: </div>
                                     <div class="price-item">+ $<span id="tax-amount"></span></div>
@@ -138,16 +137,11 @@
                         <button type="submit" id="order-submit" class="js-submit-order btn" tabindex="0" id="formSubmit" name="purchase">
                             Submit Order
                         </button>
+                        <% } %>
                     </form>
                 </div>
             </div>
         </div>
-        <script type="text/javascript" src="js/main.js"></script>
-</body>
-
-</html>
-</html>
-
-        </div>
     </div>
+<script type="text/javascript" src="js/main.js"></script>
 <jsp:include page="components/footer.html" />
