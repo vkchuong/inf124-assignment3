@@ -18,6 +18,8 @@ import javax.servlet.http.HttpServletResponse;
 import com.s2020iae.project3.Product;
 import com.s2020iae.project3.Items;
 import java.util.Enumeration;
+import java.util.HashMap;
+import java.util.Map;
 import javax.servlet.http.HttpSession;
 
 /**
@@ -66,26 +68,40 @@ public class CheckoutServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
+        // <editor-fold defaultstate="collapsed" desc="Handle POST requests for /checkout (Extract Data, Insert Data, Forward call)">
         System.out.println("PARAM VALUES:");
+        Map<String, String> paramMap = new HashMap<String, String>();
         Enumeration<String> paramNames = request.getParameterNames();
         while (paramNames.hasMoreElements()){
             String currParamName = paramNames.nextElement();
             String currParamValue = request.getParameter(currParamName);
-            System.out.println(currParamName +" : "+ currParamValue);
+            paramMap.put(currParamName, currParamValue);
+            System.out.println(currParamName +" : "+ paramMap.get(currParamName));
         }
-        // LOGIC
+        
+        // INSERT all form params in Orders Table
+        Connection con = null;
+        Statement stm = null;
+        int numOfRowsAffected = -1;
+        
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/project3", "root", "");
+            stm = con.createStatement();
+            String query = "INSERT INTO orders (`firstname`, `lastname`, `email`, `phone`, `address`, `city`, `state`, `zip`, `billaddr`, `billcity`, `billstate`, `billzip`, `method`, `productid`, `quantity`, `cardname`, `cardnumber`, `expmonth`, `expyear`, `cvv`, `price`) VALUES ('"+paramMap.get("firstname")+"','"+paramMap.get("lastname")+"','"+paramMap.get("email")+"','"+paramMap.get("phone")+"','"+paramMap.get("address")+"','"+paramMap.get("city")+"','"+paramMap.get("state")+"','"+paramMap.get("zip")+"','"+paramMap.get("billaddr")+"','"+paramMap.get("billcity")+"','"+paramMap.get("billstate")+"','"+paramMap.get("billzip")+"','"+paramMap.get("method")+"','"+paramMap.getOrDefault("productId","1")+"','"+paramMap.getOrDefault("quantity","1")+"','"+paramMap.get("cardname")+"','"+paramMap.get("cardnumber")+"','"+paramMap.get("expmonth")+"','"+paramMap.get("expyear")+"','"+paramMap.get("cvv")+"','"+paramMap.get("totalPrice")+"')";
+            System.out.println(query);
+            numOfRowsAffected = stm.executeUpdate(query);
+            System.out.println("Num Of Rows Affected: "+numOfRowsAffected);
+        } catch (SQLException ex) {
+            System.out.print(ex);
+        } catch (ClassNotFoundException ex) {
+            System.out.print(ex);
+        }
+                
+        // Forward this POST request as a GET request to Confirmation Servlet
+        
         RequestDispatcher rd = getServletContext().getRequestDispatcher("/confirmation.jsp");
-        rd.forward(request, response);
-//        form Data   request.getParams()
-//                
-//        name, final price, = extract form Data
-//        
-//        SQL(insert, -- orders , , )
-//        
-//        order conf # = getLastId(orders) 
-//        
-//        forward(confirm.jsp, order conf #)
-//                
+        rd.forward(request, response);              
     }
     
     /**

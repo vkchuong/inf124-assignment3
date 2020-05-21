@@ -10,12 +10,11 @@
         <div class="main">
                 <h1>GET Request: This H1 lives in Confirmation.JSP </h1>
                 <div class="orderform">
-                    <form name="submitform" id="submitform" method="post" action="./confirmation">
-                        <p class="form-message"><?=(isset($errorMessage))?$errorMessage:"";?></p>
-                        <button type="submit" id="order-submit" class="js-submit-order btn" tabindex="0" id="formSubmit" name="purchase">
-                            Submit Order
-                        </button>
-                    </form>
+                    <p>Thank you for placing you cart order! Here are your details:</p>
+                    <%--<%=request.getAttribute("firstname");%>--%>
+                    <%--<%=request.getAttribute("lastname");%>--%>
+                    <!--....-->
+                    <%--<%=request.getAttribute("totalPrice");%>--%>  
                 </div>
             </div>
         </div>
