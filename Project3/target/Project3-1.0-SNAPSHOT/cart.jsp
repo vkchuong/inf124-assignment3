@@ -43,5 +43,10 @@
             </p>
             <br>
         </div>
+        <form method="GET" action="./checkout">
+            <input type="submit" class="js-submit-order btn" tabindex="0" value="Checkout"/>    
+        </form>
+        <br>  
+            
     </div>
 <jsp:include page="components/footer.html" />
