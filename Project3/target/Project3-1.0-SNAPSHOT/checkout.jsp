@@ -7,7 +7,7 @@
         <div class="main">
                 <div class="orderform">
                     <form name="submitform" id="submitform" method="post" action="./checkout">
-                        <h1>Order Form</h1>
+                        <h1 style="margin-left:0">Order Form</h1>
                         <% if(request.getAttribute("isEmpty") == "yes") { %>
                             <h3>Your cart is empty</h3>
                         <% } else { %>
