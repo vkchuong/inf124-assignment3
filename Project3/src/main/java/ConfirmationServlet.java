@@ -32,6 +32,17 @@ public class ConfirmationServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+        System.out.println("Trying to Print Attrib in ConfirmServ java");
+//        System.out.println(request.getAttribute("orderId"));
+
+        // Extract ORder id
+        
+        // Make SELECT query with id
+        
+        // save results in request.attrbutes
+        
+        // display iin .jsp
+        
         RequestDispatcher rd = request.getRequestDispatcher("/confirmation.jsp");
         rd.include(request, response);
     }

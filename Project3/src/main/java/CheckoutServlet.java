@@ -83,7 +83,7 @@ public class CheckoutServlet extends HttpServlet {
         Connection con = null;
         Statement stm = null;
         int numOfRowsAffected = -1;
-        
+        int orderId = -1; // in case INSERT fails, default orderId=-1
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/project3", "root", "");
@@ -99,7 +99,7 @@ public class CheckoutServlet extends HttpServlet {
             System.out.println(query);
             numOfRowsAffected = stm.executeUpdate(query, Statement.RETURN_GENERATED_KEYS);
             ResultSet rs = stm.getGeneratedKeys();
-            int orderId = -1; // in case INSERT fails, print orderId=-1
+            
             if (rs.next()){
                 orderId = rs.getInt(1);
             }
@@ -118,6 +118,8 @@ public class CheckoutServlet extends HttpServlet {
         // Forward this POST request as a GET request to Confirmation Servlet
         
         RequestDispatcher rd = getServletContext().getRequestDispatcher("/confirmation.jsp");
+        // We need to send this param to the ConfirmationServlet.java
+        //request.setAttribute("orderId", orderId);
         rd.forward(request, response);              
     }
     

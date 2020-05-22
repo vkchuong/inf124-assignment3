@@ -10,8 +10,9 @@
         <div class="main">
                 <h1>GET Request: This H1 lives in Confirmation.JSP </h1>
                 <div class="orderform">
+                    <!-- String orderId = (String)request.getAttribute("orderId"); -->
                     <p>Thank you for placing you cart order! Here are your details:</p>
-                    <%--<%=request.getAttribute("firstname");%>--%>
+                    <!-- %=orderId-->
                     <%--<%=request.getAttribute("lastname");%>--%>
                     <!--....-->
                     <%--<%=request.getAttribute("totalPrice");%>--%>  
