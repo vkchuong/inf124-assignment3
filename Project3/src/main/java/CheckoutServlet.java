@@ -76,6 +76,8 @@ public class CheckoutServlet extends HttpServlet {
         // LOGIC
         RequestDispatcher rd = getServletContext().getRequestDispatcher("/confirmation.jsp");
         rd.forward(request, response);
+        //RequestDispatcher sendConf = getServletContext().getRequestDispatcher("/confirmation.jsp");
+        
 //        form Data   request.getParams()
 //                
 //        name, final price, = extract form Data
