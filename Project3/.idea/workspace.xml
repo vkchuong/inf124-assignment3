@@ -1,7 +1,78 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="88588dc3-6938-4c9a-bd07-da55928d044a" name="Default Changelist" comment="" />
+    <list default="true" id="88588dc3-6938-4c9a-bd07-da55928d044a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_google_protobuf_protobuf_java_3_6_1.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__javax_servlet_jstl_1_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__mysql_mysql_connector_java_8_0_20.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Project3.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Project3.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CheckoutServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CheckoutServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/ConfirmationServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ConfirmationServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/home.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Project3-1.0-SNAPSHOT.war" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Project3-1.0-SNAPSHOT/WEB-INF/beans.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Project3-1.0-SNAPSHOT/WEB-INF/classes/AllProducts.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Project3-1.0-SNAPSHOT/WEB-INF/classes/CartServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Project3-1.0-SNAPSHOT/WEB-INF/classes/CheckoutServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Project3-1.0-SNAPSHOT/WEB-INF/classes/ConfirmationServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Project3-1.0-SNAPSHOT/WEB-INF/classes/DetailServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Project3-1.0-SNAPSHOT/WEB-INF/classes/HomeServlet.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Project3-1.0-SNAPSHOT/WEB-INF/classes/META-INF/persistence.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Project3-1.0-SNAPSHOT/WEB-INF/classes/com/s2020iae/project3/Items.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Project3-1.0-SNAPSHOT/WEB-INF/classes/com/s2020iae/project3/JAXRSConfiguration.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Project3-1.0-SNAPSHOT/WEB-INF/classes/com/s2020iae/project3/Product.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Project3-1.0-SNAPSHOT/WEB-INF/classes/com/s2020iae/project3/resources/JavaEE8Resource.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Project3-1.0-SNAPSHOT/WEB-INF/lib/mysql-connector-java-8.0.20.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Project3-1.0-SNAPSHOT/WEB-INF/lib/protobuf-java-3.6.1.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Project3-1.0-SNAPSHOT/WEB-INF/web.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Project3-1.0-SNAPSHOT/about.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Project3-1.0-SNAPSHOT/assets/baseketball.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Project3-1.0-SNAPSHOT/assets/baseketballHoop.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Project3-1.0-SNAPSHOT/assets/bgletter.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Project3-1.0-SNAPSHOT/assets/cart.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Project3-1.0-SNAPSHOT/assets/cricketBall.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Project3-1.0-SNAPSHOT/assets/cricketBat.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Project3-1.0-SNAPSHOT/assets/goldBall.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Project3-1.0-SNAPSHOT/assets/golfClub.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Project3-1.0-SNAPSHOT/assets/hotdeal.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Project3-1.0-SNAPSHOT/assets/letter.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Project3-1.0-SNAPSHOT/assets/soccer.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Project3-1.0-SNAPSHOT/assets/soccerCleats.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Project3-1.0-SNAPSHOT/assets/tennis.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Project3-1.0-SNAPSHOT/assets/tennisRackets.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Project3-1.0-SNAPSHOT/cart.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Project3-1.0-SNAPSHOT/checkout.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Project3-1.0-SNAPSHOT/components/footer.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Project3-1.0-SNAPSHOT/components/head.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Project3-1.0-SNAPSHOT/components/header.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Project3-1.0-SNAPSHOT/components/product.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Project3-1.0-SNAPSHOT/confirmation.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Project3-1.0-SNAPSHOT/contact.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Project3-1.0-SNAPSHOT/detail.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Project3-1.0-SNAPSHOT/gfv5ee8.dpf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Project3-1.0-SNAPSHOT/home.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Project3-1.0-SNAPSHOT/index.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Project3-1.0-SNAPSHOT/js/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Project3-1.0-SNAPSHOT/order.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Project3-1.0-SNAPSHOT/products.jsp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/Project3-1.0-SNAPSHOT/style.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/AllProducts.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/AllProducts.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/CartServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CartServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/CheckoutServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CheckoutServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ConfirmationServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ConfirmationServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DetailServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DetailServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/HomeServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/HomeServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -10,7 +81,24 @@
   <component name="FavoritesManager">
     <favorites_list name="Project3" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="pluginUpdatePolicy" value="UPDATE" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="importAutomatically" value="true" />
+        <option name="vmOptionsForImporter" value="-Xmx768m" />
+      </MavenImportingSettings>
+    </option>
+  </component>
   <component name="ProjectId" id="1bwKexFndDQN5dBtpRWZakvFxp7" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
@@ -18,6 +106,23 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
   </component>
   <component name="RunManager">
     <configuration name="Project3 []" type="MavenRunConfiguration" factoryName="Maven" nameIsGenerated="true">
@@ -30,7 +135,9 @@
               <set />
             </option>
             <option name="goals">
-              <list />
+              <list>
+                <option value="tomcat7:run" />
+              </list>
             </option>
             <option name="pomFileName" />
             <option name="profilesMap">
@@ -54,30 +161,57 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1589537814953</updated>
+      <workItem from="1590150182049" duration="116000" />
+      <workItem from="1590150309915" duration="85000" />
+      <workItem from="1590150410471" duration="295000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="WindowStateProjectService">
     <state x="424" y="183" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1589537904226">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="424" y="183" key="#com.intellij.execution.impl.EditConfigurationsDialog/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1589537904226" />
-    <state width="939" height="368" key="GridCell.Tab.0.bottom" timestamp="1589575108129">
+    <state x="748" y="283" key="FileChooserDialogImpl" timestamp="1590146687361">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="939" height="368" key="GridCell.Tab.0.bottom/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1589575108129" />
-    <state width="939" height="368" key="GridCell.Tab.0.center" timestamp="1589575108128">
+    <state x="748" y="283" key="FileChooserDialogImpl/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1590146687361" />
+    <state width="1878" height="381" key="GridCell.Tab.0.bottom" timestamp="1590149866580">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="939" height="368" key="GridCell.Tab.0.center/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1589575108128" />
-    <state width="939" height="368" key="GridCell.Tab.0.left" timestamp="1589575108128">
+    <state width="1878" height="381" key="GridCell.Tab.0.bottom/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1590149866580" />
+    <state width="1878" height="381" key="GridCell.Tab.0.center" timestamp="1590149866580">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="939" height="368" key="GridCell.Tab.0.left/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1589575108128" />
-    <state width="939" height="368" key="GridCell.Tab.0.right" timestamp="1589575108128">
+    <state width="1878" height="381" key="GridCell.Tab.0.center/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1590149866580" />
+    <state width="1878" height="381" key="GridCell.Tab.0.left" timestamp="1590149866580">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="939" height="368" key="GridCell.Tab.0.right/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1589575108128" />
+    <state width="1878" height="381" key="GridCell.Tab.0.left/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1590149866580" />
+    <state width="1878" height="381" key="GridCell.Tab.0.right" timestamp="1590149866580">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state width="1878" height="381" key="GridCell.Tab.0.right/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1590149866580" />
+    <state x="476" y="171" key="SettingsEditor" timestamp="1590149742320">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="476" y="171" key="SettingsEditor/-1920.0.1920.1050/0.0.1920.1050@0.0.1920.1050" timestamp="1590149742320" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

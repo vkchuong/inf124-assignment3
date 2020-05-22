@@ -15,7 +15,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="Project3" options="-endorseddirs C:\Users\chuon\Documents\NetBeansProjects\Project3\target/endorsed" />
+      <module name="Project3" options="-endorseddirs C:\Users\chuon\Desktop\inf124-assignment3\Project3\target/endorsed" />
     </option>
   </component>
 </project>

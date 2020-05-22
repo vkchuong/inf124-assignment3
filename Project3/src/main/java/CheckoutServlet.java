@@ -159,7 +159,6 @@ public class CheckoutServlet extends HttpServlet {
         // Forward this POST request as a GET request to Confirmation Servlet
         
         RequestDispatcher rd = getServletContext().getRequestDispatcher("/confirmation.jsp");
-<<<<<<< HEAD
         rd.forward(request, response);
         //RequestDispatcher sendConf = getServletContext().getRequestDispatcher("/confirmation.jsp");
         System.out.println(request.getAttribute("subTotal"));
@@ -172,12 +171,10 @@ public class CheckoutServlet extends HttpServlet {
 //        order conf # = getLastId(orders) 
 //        
 //        forward(confirm.jsp, order conf #)
-//                
-=======
+//
         // We need to send this param to the ConfirmationServlet.java
         //request.setAttribute("orderId", orderId);
-        rd.forward(request, response);              
->>>>>>> 2d8c44d5494d0417354e1cdc18e0f7e540b79866
+        rd.forward(request, response);
     }
     
     /**

@@ -17,14 +17,11 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-<<<<<<< HEAD
 import com.s2020iae.project3.Product;
 import com.s2020iae.project3.Items;
 import javax.servlet.http.HttpSession;
-=======
 import javax.servlet.RequestDispatcher;
 import javax.servlet.annotation.WebServlet;
->>>>>>> 2d8c44d5494d0417354e1cdc18e0f7e540b79866
 
 /**
  *
