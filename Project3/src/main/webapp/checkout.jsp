@@ -121,7 +121,11 @@
                                     <div class="price-item">&nbsp; &nbsp;$ <%=total%><span id="total-price"></span></div>
 
                                     <div>Total Tax: </div>
-                                    <div class="price-item">+ $<span id="tax-amount"></span></div>
+                                    <% Object tax = request.getAttribute("userTax");
+                                        
+                                        %>
+                                    <div class="price-item">+ $<span id="tax-amount" ></span></div>
+                                    <input type ="hidden" id="stateTax" name="tax" value ="" />
                                     <div>
                                         <div>Shipping: </div>
                                         <div class="price-item">+ $<span id="shipping"></span></div>

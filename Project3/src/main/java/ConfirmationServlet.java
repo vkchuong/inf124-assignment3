@@ -6,12 +6,20 @@
  * and open the template in the editor.
  */
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.io.PrintWriter;
-import javax.servlet.RequestDispatcher;
+import com.s2020iae.project3.Product;
+import com.s2020iae.project3.Items;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -33,6 +41,7 @@ public class ConfirmationServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         RequestDispatcher rd = request.getRequestDispatcher("/confirmation.jsp");
         rd.include(request, response);
+        System.out.println("WE are using the ConfirmationServlet");
     }
 
     

@@ -40,7 +40,7 @@ public class DetailServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String id = request.getParameter("id");
-        System.out.print(id);
+        //System.out.print(id);
         response.setContentType("text/html;charset=UTF-8");
         Connection con = null;
         Statement stm = null;
@@ -64,7 +64,7 @@ public class DetailServlet extends HttpServlet {
                             trackList.remove(0);
                         
                         for (Product p: trackList) { 
-                            System.out.println(p.getName()); 
+                            //System.out.println(p.getName()); 
                         }
                     }
                     trackList.add(pd);

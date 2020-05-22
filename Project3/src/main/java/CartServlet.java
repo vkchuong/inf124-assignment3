@@ -84,7 +84,7 @@ public class CartServlet extends HttpServlet {
                 ArrayList<Product> cartList = (ArrayList<Product>)(session.getAttribute("cartItems"));
                 request.setAttribute("cartData", cartList);
                 for (Product p: cartList) {
-                    System.out.println(p.getName());
+                    //System.out.println(p.getName());
                     subTotal += p.getPrice();
                 }
                 request.setAttribute("isEmpty", "no");

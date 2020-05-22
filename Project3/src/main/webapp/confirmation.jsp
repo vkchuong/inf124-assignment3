@@ -27,7 +27,7 @@
                        
                         
         %>
-                    <tr>
+                  <tr>
                        
                         <td><%=p.getName()%></td>
                         <td><img src="./assets/<%=p.getThumbnail()%>" height="75"></td>
@@ -38,11 +38,42 @@
              <%}%>       
     	    </table>
             
+            
                    
                 </div>
                 <div class="orderform"> 
                     <form name="submitform" id="submitform" method="post" action="./confirmation">
                         <p class="form-message"><?=(isset($errorMessage))?$errorMessage:"";?></p>
+                        <div class="name">
+                            <table id ="userBillInf" border="1" width="100%">
+                                <tr>
+                                    <th>Billing First name: </th>
+                                    <th>Billing Last name: </th>
+                                    <th>Billing Email: </th>
+                                    <th>Billing Phone: </th>
+                                    <th>Billing Address: </th>
+                                    <th>Billing Email: </th>
+                                    <th>Billing City: </th>
+                                    <th>Billing State: </th>
+                                    <th>Billing Zipcode: </th>
+                                </tr>
+                            </table>
+                        </div>
+                        <div class="name">
+                            <table id ="userShipInf" border="1" width="100%">
+                                <tr>
+                                    <th>Shipping First name: </th>
+                                    <th>Shipping Last name: </th>
+                                    <th>Shipping Email: </th>
+                                    <th>Shipping Phone: </th>
+                                    <th>Shipping Address: </th>
+                                    <th>Shipping Email: </th>
+                                    <th>Shipping City: </th>
+                                    <th>Shipping State: </th>
+                                    <th>Shipping Zipcode: </th>
+                                </tr>
+                            </table>
+                        </div>
                         <button type="submit" id="order-submit" class="js-submit-order btn" tabindex="0" id="formSubmit" name="purchase">
                             Submit Order
                         </button>
