@@ -5,12 +5,12 @@
 <jsp:include page="components/head.html" />
 <jsp:include page="components/header.html" />
     <div class="main">
-        <div class="content cart">
+        <div class="content">
             <h1>Cart</h1>
             <% if(request.getAttribute("isEmpty") == "yes") { %>
-                <h3>Your cart is empty</h3>
+                <h3 class="all-align">Your cart is empty</h3>
             <% } else { %>
-    	    <table id="cartTable" border="1" width="100%">
+    	    <table id="cartTable" border="1" width="100%" class="all-align">
                 <tr>
                     <th>id</th>
                     <th>name</th>
@@ -33,15 +33,14 @@
                     </tr>
                     <%}%>
     	    </table>
-            <% } %>
             <br>
             <% Object total = request.getAttribute("subTotal");%> 
             <% Object numOfItems = request.getAttribute("numOfItems");%> 
-            <p style="text-align: right; font-weight: 1.2rem;">Subtotal (<%=numOfItems%> items): </p>
-            <p style="text-align: right; font-weight: 1.2rem;" id="totalPrice">
-                <%=total%>     
-            </p>
-            <br>
+            <p class="text-right">Subtotal (<%=numOfItems%> items): <%=total%></p>
+            <p class="text-right"><a href="./checkout" class="addtocart">Checkout</a></p>
+            <% } %>
         </div>
+        <br>  
+            
     </div>
 <jsp:include page="components/footer.html" />

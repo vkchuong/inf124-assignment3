@@ -9,44 +9,12 @@
         <url-pattern>/home</url-pattern>
     </servlet-mapping>
     <servlet>
-        <servlet-name>DetailServlet</servlet-name>
-        <servlet-class>DetailServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>DetailServlet</servlet-name>
-        <url-pattern>/detail</url-pattern>
-    </servlet-mapping>
-    <servlet>
-        <servlet-name>AllProducts</servlet-name>
-        <servlet-class>AllProducts</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>AllProducts</servlet-name>
-        <url-pattern>/products</url-pattern>
-    </servlet-mapping>
-    <servlet>
-        <servlet-name>CartServlet</servlet-name>
-        <servlet-class>CartServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>CartServlet</servlet-name>
-        <url-pattern>/cart</url-pattern>
-    </servlet-mapping>
-    <servlet>
         <servlet-name>CheckoutServlet</servlet-name>
         <servlet-class>CheckoutServlet</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>CheckoutServlet</servlet-name>
         <url-pattern>/checkout</url-pattern>
-    </servlet-mapping>
-    <servlet>
-        <servlet-name>ConfirmationServlet</servlet-name>
-        <servlet-class>ConfirmationServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>ConfirmationServlet</servlet-name>
-        <url-pattern>/confirmation</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
@@ -55,7 +23,7 @@
     </session-config>
     <welcome-file-list>
         <welcome-file>
-            index.jsp
+            home
         </welcome-file>
     </welcome-file-list>
 </web-app>

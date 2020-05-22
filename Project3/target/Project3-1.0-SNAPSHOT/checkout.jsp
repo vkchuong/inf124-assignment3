@@ -1,20 +1,46 @@
 <%@page import="com.s2020iae.project3.Product"%>
+<%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <jsp:include page="components/head.html" />
 <jsp:include page="components/header.html" />
-    <div class="main">
-        <div class="content">         
-
-<body>
-    <div class="container">
         <div class="main">
-                <h1>Order Form</h1>
+            <div class="content cart">
+                <% if(request.getAttribute("isEmpty") == "no") { %>
+                    <% Object numOfItems = request.getAttribute("numOfItems");%> 
+                    <h1>Re-confirm <%=numOfItems%> item(s)</h1>
+                    <table id="cartTable" border="1" width="100%" class="all-align">
+                        <tr>
+                            <th>name</th>
+                            <th>thumbnail</th>
+                            <th>price</th>
+                            <th>summary</th>
+                        </tr>
+                        <%ArrayList<Product> tracks =
+                            (ArrayList<Product>)request.getAttribute("cartData");
+                            for(Product p:tracks){
+                        %>
+                        <tr>
+                            <td><%=p.getName()%></td>
+                            <td><img src="./assets/<%=p.getThumbnail()%>" height="30"></td>
+                            <td><%=p.getPrice()%></td>
+                            <td><%=p.getSummary()%></td>
+                        </tr>
+                        <%}%>
+                    </table>
+                <% } %>
+                <br>
+            </div>
+            <div class="content">
                 <div class="orderform">
                     <form name="submitform" id="submitform" method="post" action="./checkout">
-                        <p class="form-message"><?=(isset($errorMessage))?$errorMessage:"";?></p>
+                        <h1>Order Form</h1>
+                        <% if(request.getAttribute("isEmpty") == "yes") { %>
+                            <h3 class="all-align">Your cart is empty</h3>
+                            <br /><br />
+                        <% } else { %>
                         <div class="row">
-                            <div class="col-50">
+                            <div class="col-75">
                                 <h3>Buyer's Information</h3>
                                 <br />
                                 <label for="fname"> First Name</label>
@@ -36,7 +62,7 @@
                                 <div class="row">
                                     <div class="col-50">
                                         <label for="state">State</label>
-                                        <input type="text" id="state" name="state" placeholder="New York" required />
+                                        <input type="text" id="state" name="state" placeholder="New York" required autocomplete="no"/>
                                         <div id="stateList"></div>
                                     </div>
                                     <div class="col-50">
@@ -53,11 +79,11 @@
                                     <option>Overnight ($11.00)</option>
                                     <option selected>2-day expedited ($9.50)</option>
                                     <option>7-day ground ($6.25)</option>
-                                </select>                               
+                                </select>
                                 <br />
                             </div>
 
-                            <div class="col-50">                                                           
+                            <div class="col-50">
                                 <h3>Payment Information</h3>
                                 <br />
                                 <label for="cname">Name on Card</label>
@@ -117,8 +143,8 @@
                                 <div id="price-table">
 
                                     <div>Total Price:</div>
-                                    <% Object total = request.getAttribute("subTotal");%> 
-                                    <div class="price-item">&nbsp; &nbsp;$ <%=total%><span id="total-price"></span></div>
+                                    <% Object total = request.getAttribute("subTotal");%>
+                                    <div class="price-item"><span id="total-price">$<%=total%></span></div>
 
                                     <div>Total Tax: </div>
                                     <% Object tax = request.getAttribute("userTax");
@@ -134,7 +160,7 @@
                                     <div>
                                         <h4>Final Price</h4>
                                         <div class="price-item">= $<span id="final-price"></span></div>
-                                        <input type="hidden" id="totalPrice" name="totalPrice" value="" />
+                                        <input type="hidden" id="totalPrice" name="totalPrice" value="<%=total%>" />
                                     </div>
                                 </div>
                             </div>
@@ -142,16 +168,10 @@
                         <button type="submit" id="order-submit" class="js-submit-order btn" tabindex="0" id="formSubmit" name="purchase">
                             Submit Order
                         </button>
+                        <% } %>
                     </form>
                 </div>
             </div>
-        </div>
-        <script type="text/javascript" src="js/main.js"></script>
-</body>
-
-</html>
-</html>
-
         </div>
     </div>
 <jsp:include page="components/footer.html" />

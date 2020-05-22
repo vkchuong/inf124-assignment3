@@ -17,14 +17,20 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+<<<<<<< HEAD
 import com.s2020iae.project3.Product;
 import com.s2020iae.project3.Items;
 import javax.servlet.http.HttpSession;
+=======
+import javax.servlet.RequestDispatcher;
+import javax.servlet.annotation.WebServlet;
+>>>>>>> 2d8c44d5494d0417354e1cdc18e0f7e540b79866
 
 /**
  *
  * @author Josue
  */
+@WebServlet(urlPatterns = {"/confirmation"})
 public class ConfirmationServlet extends HttpServlet {
 
     /**
@@ -39,6 +45,17 @@ public class ConfirmationServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
+        System.out.println("Trying to Print Attrib in ConfirmServ java");
+//        System.out.println(request.getAttribute("orderId"));
+
+        // Extract ORder id
+        
+        // Make SELECT query with id
+        
+        // save results in request.attrbutes
+        
+        // display iin .jsp
+        
         RequestDispatcher rd = request.getRequestDispatcher("/confirmation.jsp");
         rd.include(request, response);
         System.out.println("WE are using the ConfirmationServlet");

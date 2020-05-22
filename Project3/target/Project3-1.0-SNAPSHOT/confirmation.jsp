@@ -11,6 +11,7 @@
     <div class="container">
         <div class="main">
                 <h1>GET Request: This H1 lives in Confirmation.JSP </h1>
+<<<<<<< HEAD
                 <div> 
                     <table id="userDet" border="1" width="100%">
                         <tr>
@@ -78,6 +79,13 @@
                             Submit Order
                         </button>
                     </form>
+                <div class="orderform">
+                    <!-- String orderId = (String)request.getAttribute("orderId"); -->
+                    <p>Thank you for placing you cart order! Here are your details:</p>
+                    <!-- %=orderId-->
+                    <%--<%=request.getAttribute("lastname");%>--%>
+                    <!--....-->
+                    <%--<%=request.getAttribute("totalPrice");%>--%>  
                 </div>
             </div>
         </div>

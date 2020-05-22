@@ -6,26 +6,24 @@
  * and open the template in the editor.
  */
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.ArrayList;
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import com.s2020iae.project3.Product;
 import javax.servlet.annotation.WebServlet;
 
 /**
  *
  * @author chuon
  */
-@WebServlet(urlPatterns = {"/products"})
-public class AllProducts extends HttpServlet {
+@WebServlet(urlPatterns = {"/tax"})
+public class StateTaxServlet extends HttpServlet {
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**
@@ -39,6 +37,7 @@ public class AllProducts extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+        String zip = request.getParameter("zip");
         response.setContentType("text/html;charset=UTF-8");
         Connection con = null;
         Statement stm = null;
@@ -47,20 +46,17 @@ public class AllProducts extends HttpServlet {
             Class.forName("com.mysql.cj.jdbc.Driver");
             con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/project3", "root", "");
             stm = con.createStatement();
-            rs = stm.executeQuery("SELECT * FROM products");
-            ArrayList<Product> newProduct = new ArrayList<Product>();
+            rs = stm.executeQuery("SELECT * FROM tax WHERE `zipcode`= '" + zip + "'");
             while(rs.next()) {
-                newProduct.add(new Product(rs.getInt("id"), rs.getString("name"), rs.getString("summary"), rs.getString("thumbnail"), rs.getString("category"), rs.getString("detail"), rs.getFloat("price")));
+                try (PrintWriter out = response.getWriter()) {
+                    out.println(rs.getString("rate"));
+                }
             }
-            request.setAttribute("data", newProduct);
         } catch (SQLException ex) {
             System.out.print(ex);
         } catch (ClassNotFoundException ex) {
             System.out.print(ex);
         }
-
-        RequestDispatcher rd = request.getRequestDispatcher("/products.jsp");
-        rd.include(request, response);
     }
 
     /**
