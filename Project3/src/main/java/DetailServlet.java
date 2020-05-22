@@ -26,7 +26,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author chuon
  */
-@WebServlet(urlPatterns = {"/detail"})
+@WebServlet(name = "DetailServlet", urlPatterns = {"/detail"})
 public class DetailServlet extends HttpServlet {
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

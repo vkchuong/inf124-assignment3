@@ -24,7 +24,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author chuon
  */
-@WebServlet(urlPatterns = {"/cart"})
+@WebServlet(name = "CartServlet", urlPatterns = {"/cart"})
 public class CartServlet extends HttpServlet {
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

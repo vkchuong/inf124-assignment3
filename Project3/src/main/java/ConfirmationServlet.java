@@ -27,7 +27,7 @@ import javax.servlet.annotation.WebServlet;
  *
  * @author Josue
  */
-@WebServlet(urlPatterns = {"/confirmation"})
+@WebServlet(name = "ConfirmationServlet", urlPatterns = {"/confirmation"})
 public class ConfirmationServlet extends HttpServlet {
 
     /**

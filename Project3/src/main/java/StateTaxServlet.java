@@ -22,7 +22,7 @@ import javax.servlet.annotation.WebServlet;
  *
  * @author chuon
  */
-@WebServlet(urlPatterns = {"/tax"})
+@WebServlet(name = "StateTaxServlet", urlPatterns = {"/tax"})
 public class StateTaxServlet extends HttpServlet {
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
