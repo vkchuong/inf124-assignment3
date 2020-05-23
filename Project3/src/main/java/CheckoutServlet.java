@@ -1,36 +1,25 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-import java.io.IOException;
-import java.sql.*;
-import java.util.ArrayList;
+import com.s2020iae.project3.Product;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import com.s2020iae.project3.Product;
-import com.s2020iae.project3.Items;
+import javax.servlet.http.HttpSession;
+import java.io.IOException;
+import java.sql.*;
+import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.Map;
-import javax.servlet.http.HttpSession;
 
 /**
  *
  * @author chuon
  */
+@WebServlet(name = "ConfirmationServlet", urlPatterns = {"/checkout"})
 public class CheckoutServlet extends HttpServlet {
-    /**
-     * Handles the HTTP <code>GET</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -47,7 +36,7 @@ public class CheckoutServlet extends HttpServlet {
             request.setAttribute("isEmpty", "no");
             numOfItems = cartList.size();
         } else {
-            request.setAttribute("isEmpty", "yes");                
+            request.setAttribute("isEmpty", "yes");
         }
         subTotal = Math.round(subTotal*100.0)/100.0;
         request.setAttribute("subTotal", String.format("%.2f", subTotal));
@@ -55,13 +44,13 @@ public class CheckoutServlet extends HttpServlet {
 
         RequestDispatcher rd = request.getRequestDispatcher("/checkout.jsp");
         rd.include(request, response);
-        
+
     }
-    
+
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+
         Map<String, String> paramMap = new HashMap<String, String>();
         Enumeration<String> paramNames = request.getParameterNames();
         while (paramNames.hasMoreElements()){
@@ -90,8 +79,8 @@ public class CheckoutServlet extends HttpServlet {
 
             String query = "INSERT INTO orders (`firstname`, `lastname`, `email`, `phone`, `address`, `city`, `state`, `zip`, " +
                     "`billaddr`, `billcity`, `billstate`, `billzip`, " +
-                    "`method`, `productid`, `quantity`, `cardname`, " +
-                    "`cardnumber`, `expmonth`, `expyear`, `cvv`, `price`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+                    "`method`, `cardname`, `cardnumber`, `expmonth`, `expyear`, `cvv`, `price`) " +
+                    "VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
             try {
                 PreparedStatement st = con.prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
                 st.setString(1, paramMap.get("firstname"));
@@ -107,24 +96,33 @@ public class CheckoutServlet extends HttpServlet {
                 st.setString(11, paramMap.get("billstate"));
                 st.setInt(12, Integer.parseInt(paramMap.get("billzip")));
                 st.setString(13, paramMap.get("method"));
-                st.setInt(14, Integer.parseInt(paramMap.getOrDefault("productId","1")));
-                st.setInt(15, Integer.parseInt(paramMap.getOrDefault("quantity","1")));
-                st.setString(16, paramMap.get("cardname"));
-                st.setString(17, paramMap.get("cardnumber"));
-                st.setInt(18, Integer.parseInt(paramMap.get("expmonth")));
-                st.setInt(19, Integer.parseInt(paramMap.get("expyear")));
-                st.setInt(20, Integer.parseInt(paramMap.get("cvv")));
-                st.setFloat(21, Float.parseFloat(paramMap.get("totalPrice")));
+                st.setString(14, paramMap.get("cardname"));
+                st.setString(15, paramMap.get("cardnumber"));
+                st.setInt(16, Integer.parseInt(paramMap.get("expmonth")));
+                st.setInt(17, Integer.parseInt(paramMap.get("expyear")));
+                st.setInt(18, Integer.parseInt(paramMap.get("cvv")));
+                st.setFloat(19, Float.parseFloat(paramMap.get("totalPrice")));
 
                 st.executeUpdate();
                 ResultSet rs = st.getGeneratedKeys();
                 if (rs.next()){
                     orderId = rs.getInt(1);
-                }
-                System.out.println("Order ID #: " + orderId);
 
+                    HttpSession session = request.getSession();
+                    ArrayList<Product> cartList = (ArrayList<Product>)(session.getAttribute("cartItems"));
+                    String itemQuery = "INSERT INTO items (`orderid`, `productid`) VALUES (?, ?)";
+                    PreparedStatement st2 = con.prepareStatement(itemQuery);
+                    con.setAutoCommit(false);
+                    for (Product p: cartList) {
+                        st2.setInt( 1, orderId );
+                        st2.setInt( 2, p.getId() );
+                        st2.addBatch();
+                    }
+                    st2.executeBatch();
+                    con.commit();
+                }
             } catch (SQLException e) {
-                System.err.format("SQL State: %s\n%s", e.getSQLState(), e.getMessage());
+                System.out.format("SQL State: %s\n%s", e.getSQLState(), e.getMessage());
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -141,15 +139,4 @@ public class CheckoutServlet extends HttpServlet {
             System.out.print(ex);
         }
     }
-    
-    /**
-     * Returns a short description of the servlet.
-     *
-     * @return a String containing servlet description
-     */
-    @Override
-    public String getServletInfo() {
-        return "Short description";
-    }// </editor-fold>
-
 }

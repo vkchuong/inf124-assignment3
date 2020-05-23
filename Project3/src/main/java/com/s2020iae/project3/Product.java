@@ -19,9 +19,8 @@ public class Product {
     private String thumbnail;
     private String category;
     private String detail;
-    private Float price; 
-    // Parameterized Constructor to set Student 
-    // name, age, course enrolled in. 
+    private Float price;
+
     public Product(int i, String n, String s, String t, String c, String d, Float p)
     { 
         this.id = i;
@@ -31,9 +30,7 @@ public class Product {
         this.category = c;
         this.detail = d;
         this.price = p;
-    } 
-    // Setter Methods to set table data to be 
-    // displayed 
+    }
 
     public int getId() {
         return id;
@@ -90,4 +87,5 @@ public class Product {
     public void setPrice(Float price) {
         this.price = price;
     }
+
 }

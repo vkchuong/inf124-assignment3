@@ -1,7 +1,7 @@
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<jsp:include page="components/head.html" />
-<jsp:include page="components/header.html" />
+<jsp:include page="components/head.jsp" />
+<jsp:include page="components/header.jsp" />
         <div class="main">
             <div class="content">
                 <h1>Contact Us</h1>
@@ -18,4 +18,4 @@
                 </form><br><br>
             </div>
         </div>
-<jsp:include page="components/footer.html" />
+<jsp:include page="components/footer.jsp" />

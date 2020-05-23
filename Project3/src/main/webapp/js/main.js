@@ -1,8 +1,3 @@
-function sendEmail() {
-    document.getElementById("contactform").action = "mailto:info@sportsstore.com";
-}
-
-
 // using jQuery and Ajax for form autocomplete
 var taxRate = 0;
 var shipping = 9.50;
@@ -33,7 +28,7 @@ $(document).ready(function() {
 
     $('#zip').keyup(function() {
         var zip = $(this).val();
-        if (zip.length > 3) {
+        if (zip.length > 2) {
             $.ajax({
                 url: "./tax",
                 method: "GET",
@@ -65,11 +60,11 @@ $(document).ready(function() {
         }
         displayPrice();
     });
-    
-    const displayPrice = () =>{
+
+    function displayPrice() {
         $('#total-price').html(total);
         $('#tax-amount').html((total * taxRate).toFixed(2));
-        let final = (total + (total * taxRate) + shipping);
+        var final = (total + (total * taxRate) + shipping);
         $('#shipping').html(shipping.toFixed(2));
         $('#final-price').html(final.toFixed(2));
         $('input[id=totalPrice]').val(final.toFixed(2));
@@ -83,20 +78,3 @@ $(document).ready(function() {
         $('#billing-address').slideToggle();
     })
 });
-
-function startCountdown() {
-    var countDownDate = new Date("May 21, 2020 23:59:59").getTime();
-    var x = setInterval(function() {
-        var now = new Date().getTime();
-        var distance = countDownDate - now;
-        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-        document.getElementsByClassName("countdown")[0].innerHTML = ("0" + days).slice(-2) + " DAYS, " + ("0" + hours).slice(-2) + " HOURS, " + ("0" + minutes).slice(-2) + " MINS, " + ("0" + seconds).slice(-2) + " SECS ";
-        if (distance < 0) {
-            clearInterval(x);
-            document.getElementsByClassName("countdown")[0].innerHTML = "EXPIRED";
-        }
-    }, 1000);
-}

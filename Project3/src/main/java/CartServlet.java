@@ -1,24 +1,16 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-import java.io.IOException;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.ArrayList;
+import com.s2020iae.project3.Product;
+
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import com.s2020iae.project3.Product;
-import com.s2020iae.project3.Items;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpSession;
+import java.io.IOException;
+import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -27,15 +19,6 @@ import javax.servlet.http.HttpSession;
 @WebServlet(name = "CartServlet", urlPatterns = {"/cart"})
 public class CartServlet extends HttpServlet {
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-    /**
-     * Handles the HTTP <code>GET</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -52,7 +35,6 @@ public class CartServlet extends HttpServlet {
                 rs = stm.executeQuery("SELECT * FROM products WHERE `id` = '" + id + "'");
                 while(rs.next()) {
                     Product pd = new Product(rs.getInt("id"), rs.getString("name"), rs.getString("summary"), rs.getString("thumbnail"), rs.getString("category"), rs.getString("detail"), rs.getFloat("price"));
-
                     // Begin Store to session
                         ArrayList<Product> cartList;
                         HttpSession session = request.getSession(false);
@@ -64,14 +46,9 @@ public class CartServlet extends HttpServlet {
                         }
                         cartList.add(pd);
                         session.setAttribute("cartItems", cartList);// save session
-                    // End Store to session
-
-//                    request.setAttribute("data", pd);
-//                    RequestDispatcher rd = request.getRequestDispatcher("/detail.jsp");
-//                    rd.include(request, response);
                     String site = new String("./cart");
                     response.setStatus(response.SC_MOVED_TEMPORARILY);
-                    response.setHeader("Location", site); 
+                    response.setHeader("Location", site);
                 }
             } catch (SQLException ex) {
                 System.out.print(ex);
@@ -84,15 +61,14 @@ public class CartServlet extends HttpServlet {
             int numOfItems = 0;
             if(null != session.getAttribute("cartItems")) {
                 ArrayList<Product> cartList = (ArrayList<Product>)(session.getAttribute("cartItems"));
-                request.setAttribute("cartData", cartList);
                 for (Product p: cartList) {
-                    //System.out.println(p.getName());
                     subTotal += p.getPrice();
                 }
+                request.setAttribute("cartData", cartList);
                 request.setAttribute("isEmpty", "no");
                 numOfItems = cartList.size();
             } else {
-                request.setAttribute("isEmpty", "yes");                
+                request.setAttribute("isEmpty", "yes");
             }
             subTotal = Math.round(subTotal*100.0)/100.0;
             request.setAttribute("subTotal", String.format("%.2f", subTotal));
@@ -102,15 +78,4 @@ public class CartServlet extends HttpServlet {
         }
 
     }
-
-    /**
-     * Returns a short description of the servlet.
-     *
-     * @return a String containing servlet description
-     */
-    @Override
-    public String getServletInfo() {
-        return "Short description";
-    }// </editor-fold>
-
 }

@@ -2,8 +2,8 @@
 <%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<jsp:include page="components/head.html" />
-<jsp:include page="components/header.html" />
+<jsp:include page="components/head.jsp" />
+<jsp:include page="components/header.jsp" />
         <div class="main">
             <div class="content">
                 <h1>New Products</h1>
@@ -33,6 +33,22 @@
                     <h2>UP TO 75% OFF</h2>
                     <a href="products.php" class="getdeal">Shop Now</a>
                 </div>
+                <script type="text/javascript">
+                    var countDownDate = new Date("May 30, 2020 23:59:59").getTime();
+                    var x = setInterval(function() {
+                        var now = new Date().getTime();
+                        var distance = countDownDate - now;
+                        var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                        var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                        var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                        var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                        document.getElementsByClassName("countdown")[0].innerHTML = ("0" + days).slice(-2) + " DAYS, " + ("0" + hours).slice(-2) + " HOURS, " + ("0" + minutes).slice(-2) + " MINS, " + ("0" + seconds).slice(-2) + " SECS ";
+                        if (distance < 0) {
+                            clearInterval(x);
+                            document.getElementsByClassName("countdown")[0].innerHTML = "EXPIRED";
+                        }
+                    }, 1000);
+                </script>
             </div>
             <div class="content">
                 <h1><%=request.getAttribute("historyTitle")%></h1>
@@ -66,4 +82,4 @@
                 </div>
             </div>
         </div>
-<jsp:include page="components/footer.html" />
+<jsp:include page="components/footer.jsp" />

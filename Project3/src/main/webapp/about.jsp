@@ -1,5 +1,5 @@
-<jsp:include page="components/head.html" />
-<jsp:include page="components/header.html" />
+<jsp:include page="components/head.jsp" />
+<jsp:include page="components/header.jsp" />
 <div class="main">
     <div class="content">
         <h1>About Us</h1>
@@ -71,4 +71,4 @@
         </div>
     </div>
 </div>
-<jsp:include page="components/footer.html" />
+<jsp:include page="components/footer.jsp" />
