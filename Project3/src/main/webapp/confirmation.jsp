@@ -3,14 +3,13 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <jsp:include page="components/head.html" />
 <jsp:include page="components/header.html" />
-<% ResultSet rs = (ResultSet)request.getAttribute("customerInfo"); %>
     <div class="container">
         <div class="main">
                 <h1>GET Request: This H1 lives in Confirmation.JSP </h1>
                 <div class="orderform">
                     <p class="form-message"></p>
                     <div class="name">
-                        Billing First name: <%=rs.getString("firstname")%><br />
+                        Billing First name: <br />
                         Billing Last name: <br />
                         Billing Email: <br />
                         Billing Phone: <br />

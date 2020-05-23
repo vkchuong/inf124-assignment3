@@ -52,8 +52,11 @@ public class ConfirmationServlet extends HttpServlet {
             stm = con.createStatement();
             rs = stm.executeQuery("SELECT * FROM `orders` WHERE `id` = '" + orderID + "'");
             while (rs.next()) {
+                System.out.print(rs.getString("firstname"));
                 request.setAttribute("customerInfo", rs);
             }
+//            ResultSet newRS = (ResultSet)request.getAttribute("customerInfo");
+//            System.out.print(newRS.getString("firstname"));
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         } catch (SQLException e) {
