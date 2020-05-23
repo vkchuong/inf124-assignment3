@@ -47,9 +47,9 @@
                                 <input type="text" id="fname" name="firstname" placeholder="John" required />
                                 <label for="lname"> Last Name</label>
                                 <input type="text" id="lname" name="lastname" placeholder="White" required />
-                                <label for="email"> Email <?=(isset($error["email"]))?$error["email"]:"";?></label>
+                                <label for="email"> Email</label>
                                 <input type="text" id="email" name="email" placeholder="john@example.com" required />
-                                <label for="phone"> Phone Number <?=(isset($error["phone"]))?$error["phone"]:"";?></label>
+                                <label for="phone"> Phone Number</label>
                                 <input type="text" id="phone" name="phone" placeholder="123-123-1234" required />
                                 <h3>Shipping Address</h3>
                                 <br />
@@ -66,7 +66,7 @@
                                         <div id="stateList"></div>
                                     </div>
                                     <div class="col-50">
-                                        <label for="zip">Zip <?=(isset($error["zip"]))?$error["zip"]:"";?></label>
+                                        <label for="zip">Zip</label>
                                         <input type="text" id="zip" name="zip" placeholder="10001" required />
                                     </div>
                                 </div>
@@ -89,9 +89,8 @@
                                 <label for="cname">Name on Card</label>
                                 <input type="text" id="cname" name="cardname" placeholder="John More Doe" required />
                                 <label for="ccnum">Credit card number</label>
-                                <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444"
-                                    required />
-                                <label for="expmonth">Exp Month <?=(isset($error["expmonth"]))?$error["expmonth"]:"";?></label>
+                                <input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444" required />
+                                <label for="expmonth">Exp Month</label>
                                 <select id="expmonth" name="expmonth" placeholder="September" required>
                                     <option selected>1</option>
                                     <option>2</option>
@@ -106,15 +105,14 @@
                                     <option>11</option>
                                     <option>12</option>
                                 </select>
-
                                 <div class="row">
                                     <div class="col-50">
-                                        <label for="expyear">Exp Year <?=(isset($error["expyear"]))?$error["expyear"]:"";?></label>
-                                        <input type="text" id="expyear" name="expyear" placeholder="2018" required />
+                                        <label for="expyear">Exp Year</label>
+                                        <input type="number" id="expyear" name="expyear" placeholder="2020" required />
                                     </div>
                                     <div class="col-50">
-                                        <label for="cvv">CVV <?=(isset($error["cvv"]))?$error["cvv"]:"";?></label>
-                                        <input type="text" id="cvv" name="cvv" placeholder="352" required />
+                                        <label for="cvv">CVV</label>
+                                        <input type="number" id="cvv" name="cvv" placeholder="352" required />
                                     </div>
                                     <br /><br />
                                 </div>
@@ -141,15 +139,11 @@
                                     </div>
                                 </div>
                                 <div id="price-table">
-
                                     <div>Total Price:</div>
                                     <% Object total = request.getAttribute("subTotal");%>
                                     <div class="price-item"><span id="total-price">$<%=total%></span></div>
 
                                     <div>Total Tax: </div>
-                                    <% Object tax = request.getAttribute("userTax");
-                                        
-                                        %>
                                     <div class="price-item">+ $<span id="tax-amount" ></span></div>
                                     <input type ="hidden" id="stateTax" name="tax" value ="" />
                                     <div>

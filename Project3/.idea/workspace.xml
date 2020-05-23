@@ -2,15 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="88588dc3-6938-4c9a-bd07-da55928d044a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/SampleServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/AllProducts.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/AllProducts.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/CartServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CartServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/CheckoutServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/CheckoutServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ConfirmationServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ConfirmationServlet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/DetailServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DetailServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/StateServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/StateServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/StateTaxServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/StateTaxServlet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/checkout.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/checkout.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/confirmation.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/confirmation.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/home.jsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/CheckoutServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/CheckoutServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/ConfirmationServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/ConfirmationServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/DetailServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/DetailServlet.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/Project3/org/apache/jsp/home_jsp.java" beforeDir="false" afterPath="$PROJECT_DIR$/target/tomcat/work/Tomcat/localhost/Project3/org/apache/jsp/home_jsp.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -33,6 +36,24 @@
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
         <item name="project3@localhost" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="project3@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="project3@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="project3: schema" type="ebfa3cd1:MariaImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="project3@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="project3: schema" type="ebfa3cd1:MariaImplModel$Schema" />
+        <item name="orders: table" type="dbc44a63:MariaImplModel$Table" />
       </path>
     </expand>
     <select />
@@ -60,19 +81,29 @@
     </option>
   </component>
   <component name="ProjectId" id="1bwKexFndDQN5dBtpRWZakvFxp7" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RunDashboard">
@@ -118,21 +149,7 @@
     <option name="allServicesViewState">
       <serviceView>
         <treeState>
-          <expand>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@ee5a58ad" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-            </path>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@ee5a58ad" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceNode@53b262c1" type="9fbbdea:ServiceModel$ServiceNode" />
-            </path>
-            <path>
-              <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-              <item name="com.intellij.execution.services.ServiceModel$ServiceGroupNode@35a530f4" type="7427dc5b:ServiceModel$ServiceGroupNode" />
-            </path>
-          </expand>
+          <expand />
           <select />
         </treeState>
       </serviceView>
@@ -150,8 +167,17 @@
       <updated>1589537814953</updated>
       <workItem from="1590150182049" duration="116000" />
       <workItem from="1590150309915" duration="85000" />
-      <workItem from="1590150410471" duration="1014000" />
+      <workItem from="1590150410471" duration="1158000" />
+      <workItem from="1590215295126" duration="6289000" />
     </task>
+    <task id="LOCAL-00001" summary="Add name for Servlet">
+      <created>1590151560982</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1590151560982</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -169,6 +195,11 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+    <MESSAGE value="Add name for Servlet" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add name for Servlet" />
   </component>
   <component name="WindowStateProjectService">
     <state x="424" y="183" key="#com.intellij.execution.impl.EditConfigurationsDialog" />

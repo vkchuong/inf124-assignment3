@@ -23,7 +23,7 @@
                             </jsp:include>
                         <%}%>
                         </tr>
-                    </tbody>46
+                    </tbody>
                 </table>
             </div>
             <div class="hotdeal">

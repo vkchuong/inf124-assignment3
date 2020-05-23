@@ -42,7 +42,6 @@ public class DetailServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         String id = request.getParameter("id");
-        //System.out.print(id);
         response.setContentType("text/html;charset=UTF-8");
         Connection con = null;
         Statement stm = null;

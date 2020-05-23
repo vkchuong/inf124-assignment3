@@ -1,100 +1,39 @@
-<%@page import="com.s2020iae.project3.Product"%>
-<%@page import="java.util.ArrayList"%>
+<%@ page import="java.sql.ResultSet" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <jsp:include page="components/head.html" />
 <jsp:include page="components/header.html" />
-    <div class="main">
-        <div class="content">         
-
-<body>
+<% ResultSet rs = (ResultSet)request.getAttribute("customerInfo"); %>
     <div class="container">
         <div class="main">
                 <h1>GET Request: This H1 lives in Confirmation.JSP </h1>
-<<<<<<< HEAD
-                <div> 
-                    <table id="userDet" border="1" width="100%">
-                        <tr>
-                    
-                    <th>name</th>
-                    <th>thumbnail</th>
-                    <th>category</th>
-                    <th>price</th>
-                    <th>summary</th>
-                </tr>
-                <%ArrayList<Product> tracks =
-                        (ArrayList<Product>)session.getAttribute("cartItems");
-                        for(Product p:tracks){
-                       
-                        
-        %>
-                  <tr>
-                       
-                        <td><%=p.getName()%></td>
-                        <td><img src="./assets/<%=p.getThumbnail()%>" height="75"></td>
-                        <td><%=p.getCategory()%></td>
-                        <td><%=p.getPrice()%></td>
-                        <td><%=p.getSummary()%></td>
-                    </tr>
-             <%}%>       
-    	    </table>
-            
-            
-                   
-                </div>
-                <div class="orderform"> 
-                    <form name="submitform" id="submitform" method="post" action="./confirmation">
-                        <p class="form-message"><?=(isset($errorMessage))?$errorMessage:"";?></p>
-                        <div class="name">
-                            <table id ="userBillInf" border="1" width="100%">
-                                <tr>
-                                    <th>Billing First name: </th>
-                                    <th>Billing Last name: </th>
-                                    <th>Billing Email: </th>
-                                    <th>Billing Phone: </th>
-                                    <th>Billing Address: </th>
-                                    <th>Billing Email: </th>
-                                    <th>Billing City: </th>
-                                    <th>Billing State: </th>
-                                    <th>Billing Zipcode: </th>
-                                </tr>
-                            </table>
-                        </div>
-                        <div class="name">
-                            <table id ="userShipInf" border="1" width="100%">
-                                <tr>
-                                    <th>Shipping First name: </th>
-                                    <th>Shipping Last name: </th>
-                                    <th>Shipping Email: </th>
-                                    <th>Shipping Phone: </th>
-                                    <th>Shipping Address: </th>
-                                    <th>Shipping Email: </th>
-                                    <th>Shipping City: </th>
-                                    <th>Shipping State: </th>
-                                    <th>Shipping Zipcode: </th>
-                                </tr>
-                            </table>
-                        </div>
-                        <button type="submit" id="order-submit" class="js-submit-order btn" tabindex="0" id="formSubmit" name="purchase">
-                            Submit Order
-                        </button>
-                    </form>
                 <div class="orderform">
-                    <!-- String orderId = (String)request.getAttribute("orderId"); -->
+                    <p class="form-message"></p>
+                    <div class="name">
+                        Billing First name: <%=rs.getString("firstname")%><br />
+                        Billing Last name: <br />
+                        Billing Email: <br />
+                        Billing Phone: <br />
+                        Billing Address: <br />
+                        Billing Email: <br />
+                        Billing City: <br />
+                        Billing State: <br />
+                        Billing Zipcode: <br />
+
+                        Shipping First name: </br />
+                        Shipping Last name: </br />
+                        Shipping Email: </br />
+                        Shipping Phone: </br />
+                        Shipping Address: <br />
+                        Shipping Email: <br />
+                        Shipping City: <br />
+                        Shipping State: <br />
+                        Shipping Zipcode: <br />
+                    </div>
+                <div class="orderform">
                     <p>Thank you for placing you cart order! Here are your details:</p>
-                    <!-- %=orderId-->
-                    <%--<%=request.getAttribute("lastname");%>--%>
-                    <!--....-->
-                    <%--<%=request.getAttribute("totalPrice");%>--%>  
                 </div>
             </div>
-        </div>
-        <script type="text/javascript" src="js/main.js"></script>
-</body>
-
-</html>
-</html>
-
         </div>
     </div>
 <jsp:include page="components/footer.html" />
