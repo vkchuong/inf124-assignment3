@@ -17,3 +17,7 @@ Requirements:
 3b) Upon Submitting the form, the user accepts the products they had in their cart, and the user submitted information is then stored in the database.
 
 3c)Upon submission of the user details in the checkout page, the session is then forwarded to the confirmation page where the user then recieves a confirmation id with a description of all the products they purchased, with all of the user's entered billing and shipping details, as well as the total cost of the purchase.
+
+***Bonus Feature***
+
+Bonus: After getting the confirmation of a user's purchase. The user can use the orderID to see again what it is they ordered from the homepage!
