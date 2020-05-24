@@ -40,11 +40,11 @@
             <hr>
             <div style="margin: 25px 0 50px; display:flex;">
                 <div class="card">
-                    <h3>Darrel Belen</h3>
+                    <h3>Artur Gharibkhanyan</h3>
                     <p class="title">CEO & Founder</p>
                     <p>Responsible for overall company strategy and promoting company growth.</p>
-                    <a href="#">darrel@sportstore.com</a>
-                    <p>SID: 72866173</p>
+                    <a href="#">argharibk@sportstore.com</a>
+                    <p>SID: 70269260</p>
                 </div>
                 <div class="card">
                     <h3>Vinh Chuong</h3>
@@ -54,18 +54,18 @@
                     <p>SID: 20376995</p>
                 </div>
                 <div class="card">
-                    <h3>Payam Dowlatyari</h3>
+                    <h3>Josue Lopez</h3>
                     <p class="title">Human Resources Director</p>
                     <p>Responsible for the inner workings of the company.</p>
-                    <a href="#">payam@sportstore.com</a>
-                    <p>SID: 11124675</p>
+                    <a href="#">josue@sportstore.com</a>
+                    <p>SID: 15938432</p>
                 </div>
                 <div class="card">
-                    <h3>Sanjith Venkatesh</h3>
+                    <h3>Hugo Aceves Ibarra</h3>
                     <p class="title">Customer Service Director</p>
                     <p>Responsible for any customer service requests.</p>
-                    <a href="#">sanjith@sportstore.com</a>
-                    <p>SID: 20038520</p>
+                    <a href="#">hugo@sportstore.com</a>
+                    <p>SID: 12315858</p>
                 </div>
             </div>
         </div>
