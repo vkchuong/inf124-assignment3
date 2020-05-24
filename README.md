@@ -1,6 +1,6 @@
 # inf124-assignment3
 Building a web application using Java Servlets
-Members of assignment3 are: Artur Gharibkhanyan id= 70269260, Hugo Aceves Ibarra id=12315858, Josue Lopez id= , Vinh Chuong 20376995.
+Members of assignment3 are: Artur Gharibkhanyan id= 70269260, Hugo Aceves Ibarra id=12315858, Josue Lopez id=15938432 , Vinh Chuong 20376995.
 
 Ecommerce Website that sells sports products.
 
