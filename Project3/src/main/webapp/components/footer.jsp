@@ -32,7 +32,7 @@
                                 <a href="./products">What We Offer</a>
                                 <a href="./products">Order Now</a>
                                 <a href="./about.jsp">Who We Are</a>
-                                <a href="./contact">Get In Touch</a>
+                                <a href="./contact.jsp">Get In Touch</a>
                             </td>
                             <td>
                                 <h3>FOLLOW US</h3>

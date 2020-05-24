@@ -31,7 +31,7 @@
                     <h1>Back to school deal</h1>
                     <div class="countdown">00 DAYS, 00 HOURS, 00 MINS, 00 SECS</div>
                     <h2>UP TO 75% OFF</h2>
-                    <a href="products.php" class="getdeal">Shop Now</a>
+                    <a href="./products" class="getdeal">Shop Now</a>
                 </div>
                 <script type="text/javascript">
                     var countDownDate = new Date("May 30, 2020 23:59:59").getTime();
@@ -76,7 +76,7 @@
                 <div class="subscribe">
                     <h3>Track your <b>ORDER</b></h3>
                     <form action="./confirmation" method="GET">
-                        <input type="text" name="id" placeholder="Enter Your Order ID" />
+                        <input type="number" name="id" placeholder="Enter Your Order ID" required/>
                         <button type="submit">Track</button>
                     </form>
                 </div>
