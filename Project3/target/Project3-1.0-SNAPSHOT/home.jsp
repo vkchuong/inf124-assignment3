@@ -2,7 +2,7 @@
 <%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<jsp:include page="components/head.html" />
+<jsp:include page="components/head.jsp" />
 <jsp:include page="components/header.jsp" />
         <div class="main">
             <div class="content">
@@ -74,12 +74,12 @@
             </div>
             <div class="content">
                 <div class="subscribe">
-                    <h3>Sign Up for the <b>NEWSDEAL</b></h3>
-                    <form action="email.php" method="POST">
-                        <input type="text" name="email" placeholder="Enter Your Email" />
-                        <button type="submit">Subscribe</button>
+                    <h3>Track your <b>ORDER</b></h3>
+                    <form action="./confirmation" method="GET">
+                        <input type="text" name="id" placeholder="Enter Your Order ID" />
+                        <button type="submit">Track</button>
                     </form>
                 </div>
             </div>
         </div>
-<jsp:include page="components/footer.html" />
+<jsp:include page="components/footer.jsp" />

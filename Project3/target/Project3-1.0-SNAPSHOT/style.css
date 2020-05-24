@@ -247,6 +247,13 @@ table#cartTable td {
 	margin-bottom: 20px;
 	line-height: 2;
 }
+.main .confirmation {
+	display: flex;
+	margin: 20px auto 30px;
+}
+.main .confirmTable {
+	margin-left: 20px;
+}
 .main .confirmation h1 {
 	font-size: 25px;
 }
@@ -256,7 +263,7 @@ table#cartTable td {
 	margin-bottom: 10px;
 }
 .main .confirmation p {
-	padding-left: 40px;
+	padding-left: 20px;
 }
 input[type=text], select, textarea {
 	width: 100%;
@@ -399,7 +406,8 @@ input[type=submit]:hover {
 	border-top: 2px solid #e6e6e6;
 	height: 140px;
 	text-align: center;
-	background: url(assets/bgletter.png) -50px center;
+	background: url(assets/bgletter.png) 110px center;
+	background-size: 100em;
 }
 .main .subscribe h3 {
 	font-weight: normal;
@@ -419,7 +427,7 @@ input[type=submit]:hover {
 }
 .main .subscribe button {
 	position: absolute;
-	right: 56px;
+	right: 413px;
 	height: 46px;
 	border-radius: 0 25px 25px 0;
 	color: #fff;

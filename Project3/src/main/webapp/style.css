@@ -406,7 +406,8 @@ input[type=submit]:hover {
 	border-top: 2px solid #e6e6e6;
 	height: 140px;
 	text-align: center;
-	background: url(assets/bgletter.png) -50px center;
+	background: url(assets/bgletter.png) 110px center;
+	background-size: 100em;
 }
 .main .subscribe h3 {
 	font-weight: normal;
@@ -426,7 +427,7 @@ input[type=submit]:hover {
 }
 .main .subscribe button {
 	position: absolute;
-	right: 56px;
+	right: 413px;
 	height: 46px;
 	border-radius: 0 25px 25px 0;
 	color: #fff;

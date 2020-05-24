@@ -12,31 +12,31 @@
             </div>
             <div class="navbar">
                 <ul class="content">
-                    <% if(request.getRequestURI().startsWith("/Project3/home")) { %>
+                    <% if(request.getRequestURI().startsWith("/Project3-1.0-SNAPSHOT/home")) { %>
                     <li><a href="./home" class="active">Home</a></li>
                     <% } else { %>
                     <li><a href="./home">Home</a></li>
                     <% } %>
 
-                    <% if(request.getRequestURI().startsWith("/Project3/products")) { %>
+                    <% if(request.getRequestURI().startsWith("/Project3-1.0-SNAPSHOT/products")) { %>
                         <li><a href="./products" class="active">Products</a></li>
                     <% } else { %>
                         <li><a href="./products">Products</a></li>
                     <% } %>
 
-                    <% if(request.getRequestURI().startsWith("/Project3/about.jsp")) { %>
+                    <% if(request.getRequestURI().startsWith("/Project3-1.0-SNAPSHOT/about.jsp")) { %>
                         <li><a href="./about.jsp" class="active">About Us</a></li>
                     <% } else { %>
                         <li><a href="./about.jsp">About Us</a></li>
                     <% } %>
 
-                    <% if(request.getRequestURI().startsWith("/Project3/contact.jsp")) { %>
+                    <% if(request.getRequestURI().startsWith("/Project3-1.0-SNAPSHOT/contact.jsp")) { %>
                         <li><a href="./contact.jsp" class="active">Contact Us</a></li>
                     <% } else { %>
                         <li><a href="./contact.jsp">Contact Us</a></li>
                     <% } %>
 
-                    <% if(request.getRequestURI().startsWith("/Project3/cart") || request.getRequestURI().startsWith("/Project3/checkout")) { %>
+                    <% if(request.getRequestURI().startsWith("/Project3-1.0-SNAPSHOT/cart") || request.getRequestURI().startsWith("/Project3-1.0-SNAPSHOT/checkout")) { %>
                         <li><a href ="./cart" class="active">
                             <img src="./assets/cart.png" width="20"/>
                             <span class='badge badge-warning' id='lblCartCount'> 0 </span>

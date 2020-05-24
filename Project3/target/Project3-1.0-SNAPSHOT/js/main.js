@@ -28,7 +28,7 @@ $(document).ready(function() {
 
     $('#zip').keyup(function() {
         var zip = $(this).val();
-        if (zip.length > 3) {
+        if (zip.length > 2) {
             $.ajax({
                 url: "./tax",
                 method: "GET",
@@ -60,11 +60,11 @@ $(document).ready(function() {
         }
         displayPrice();
     });
-    
-    const displayPrice = () =>{
+
+    function displayPrice() {
         $('#total-price').html(total);
         $('#tax-amount').html((total * taxRate).toFixed(2));
-        let final = (total + (total * taxRate) + shipping);
+        var final = (total + (total * taxRate) + shipping);
         $('#shipping').html(shipping.toFixed(2));
         $('#final-price').html(final.toFixed(2));
         $('input[id=totalPrice]').val(final.toFixed(2));

@@ -65,7 +65,7 @@ public class CheckoutServlet extends HttpServlet {
         int orderId = -1; // in case INSERT fails, default orderId=-1
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/project3", "root", "");
+            con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/project3?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "vinh");
             if (paramMap.get("billzip").isEmpty()){
                 paramMap.put("billzip", paramMap.get("zip"));
                 paramMap.put("billstate", paramMap.get("state"));
@@ -129,7 +129,7 @@ public class CheckoutServlet extends HttpServlet {
             HttpSession session = request.getSession();
             request.setAttribute("customerInfo", paramMap);
             request.setAttribute("orderID", orderId);
-            RequestDispatcher rd = request.getRequestDispatcher("confirmation");
+            RequestDispatcher rd = request.getRequestDispatcher("/confirmation");
             rd.forward(request, response);
 
             session.invalidate();

@@ -5,6 +5,9 @@
 <jsp:include page="components/header.jsp" />
 <div class="main">
     <div class="container">
+        <div class="content">
+            <h1>Track your order</h1>
+        </div>
         <div class="content confirmation">
             <div class="detail">
                 <%
@@ -12,12 +15,14 @@
                     Connection con = null;
                     Statement stm = null;
                     ResultSet rs = null;
+                    boolean orderExist = false;
                     try {
                         Class.forName("com.mysql.cj.jdbc.Driver");
-                        con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/project3", "root", "");
+                        con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/project3?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "vinh");
                         stm = con.createStatement();
                         rs = stm.executeQuery("SELECT * FROM `orders` WHERE `id` = '" + orderId + "'");
                         while (rs.next()) {
+                            orderExist = true;
                         %>
                         <h2>Order Information</h2>
                         <p>Order ID: <%=rs.getString("id")%></p>
@@ -41,6 +46,7 @@
                     } catch (SQLException e) {
                         e.printStackTrace();
                     }
+                    if(orderExist == true) {
                 %>
             </div>
             <div class="confirmTable">
@@ -57,7 +63,7 @@
                 <%
                     try {
                         Class.forName("com.mysql.cj.jdbc.Driver");
-                        con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/project3", "root", "");
+                        con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/project3?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "vinh");
                         stm = con.createStatement();
                         rs = stm.executeQuery("SELECT `orders`.*, `items`.*, `products`.`id` as `pid`, `products`.* " +
                                 "FROM `orders` " +
@@ -83,6 +89,9 @@
                     }
                 %>
                 </table>
+                <%  } else { %>
+                    <h3 class="all-align">This order is not exist. Please make sure your input correct order ID.</h3>
+                <%  } %>
             </div>
         </div>
     </div>

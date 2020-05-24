@@ -29,7 +29,7 @@ public class AllProducts extends HttpServlet {
         ResultSet rs = null;
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/project3", "root", "");
+            con = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/project3?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC", "root", "vinh");
             stm = con.createStatement();
             rs = stm.executeQuery("SELECT * FROM products");
             ArrayList<Product> newProduct = new ArrayList<Product>();

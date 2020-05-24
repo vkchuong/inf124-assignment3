@@ -8,14 +8,6 @@
         <servlet-name>HomeServlet</servlet-name>
         <url-pattern>/home</url-pattern>
     </servlet-mapping>
-    <servlet>
-        <servlet-name>CheckoutServlet</servlet-name>
-        <servlet-class>CheckoutServlet</servlet-class>
-    </servlet>
-    <servlet-mapping>
-        <servlet-name>CheckoutServlet</servlet-name>
-        <url-pattern>/checkout</url-pattern>
-    </servlet-mapping>
     <session-config>
         <session-timeout>
             30

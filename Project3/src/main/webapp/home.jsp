@@ -74,10 +74,10 @@
             </div>
             <div class="content">
                 <div class="subscribe">
-                    <h3>Sign Up for the <b>NEWSDEAL</b></h3>
-                    <form action="email.php" method="POST">
-                        <input type="text" name="email" placeholder="Enter Your Email" />
-                        <button type="submit">Subscribe</button>
+                    <h3>Track your <b>ORDER</b></h3>
+                    <form action="./confirmation" method="GET">
+                        <input type="text" name="id" placeholder="Enter Your Order ID" />
+                        <button type="submit">Track</button>
                     </form>
                 </div>
             </div>
